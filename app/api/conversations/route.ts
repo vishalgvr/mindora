@@ -35,11 +35,11 @@ export async function GET(req: Request) {
 
     if (search) {
       whereClause.OR = [
-        { title: { contains: search } },
+        { title: { contains: search, mode: "insensitive" } },
         {
           messages: {
             some: {
-              content: { contains: search },
+              content: { contains: search, mode: "insensitive" },
             },
           },
         },

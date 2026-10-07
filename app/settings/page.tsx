@@ -5,36 +5,43 @@ import prisma from "@/lib/db/prisma";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+export const dynamic = "force-dynamic";
 
 export default async function SettingsPage() {
-  let user = await getCurrentUser();
+  let user: any = null;
+  let models = DEFAULT_MODELS;
 
-  if (!user) {
-    user = await prisma.user.findFirst({
-      where: { email: "demo@mindora.ai" },
+  try {
+    user = await getCurrentUser();
+
+    if (!user) {
+      user = await prisma.user.findFirst({
+        where: { email: "demo@mindora.ai" },
+      });
+    }
+
+    const dbModels = await prisma.modelConfiguration.findMany({
+      where: { isEnabled: true },
     });
+
+    if (dbModels && dbModels.length > 0) {
+      models = dbModels.map((m) => ({
+        id: m.modelId,
+        name: m.name,
+        description: m.description,
+        speedRating: m.speedRating as any,
+        qualityRating: m.qualityRating as any,
+        pricingInput: m.pricingInput,
+        pricingOutput: m.pricingOutput,
+        tagline: m.description,
+        iconName: "Sparkles",
+        contextWindow: "128k tokens",
+        isEnabled: m.isEnabled,
+      }));
+    }
+  } catch (err) {
+    console.warn("SettingsPage database query fallback:", err);
   }
-
-  const dbModels = await prisma.modelConfiguration.findMany({
-    where: { isEnabled: true },
-  });
-
-  const models =
-    dbModels && dbModels.length > 0
-      ? dbModels.map((m) => ({
-          id: m.modelId,
-          name: m.name,
-          description: m.description,
-          speedRating: m.speedRating as any,
-          qualityRating: m.qualityRating as any,
-          pricingInput: m.pricingInput,
-          pricingOutput: m.pricingOutput,
-          tagline: m.description,
-          iconName: "Sparkles",
-          contextWindow: "128k tokens",
-          isEnabled: m.isEnabled,
-        }))
-      : DEFAULT_MODELS;
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#070a12] text-slate-900 dark:text-slate-100">

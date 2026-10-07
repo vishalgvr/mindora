@@ -1,5 +1,5 @@
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -15,8 +15,8 @@ model User {
   role                String         @default("USER") // USER or ADMIN
   avatar              String?
   occupation          String?
-  responsePreferences String?
-  customInstructions  String?
+  responsePreferences String?        @db.Text
+  customInstructions  String?        @db.Text
   theme               String         @default("system") // light, dark, system
   language            String         @default("en")
   defaultModel        String         @default("mindora-balanced")
@@ -28,32 +28,42 @@ model User {
 
   conversations       Conversation[]
   usageRecords        UsageRecord[]
+
+  @@map("users")
 }
 
 model Conversation {
-  id        String    @id @default(cuid())
-  userId    String
-  title     String
-  model     String    @default("mindora-balanced")
-  archived  Boolean   @default(false)
-  isFavorite Boolean  @default(false)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id         String    @id @default(cuid())
+  userId     String
+  title      String
+  model      String    @default("mindora-balanced")
+  archived   Boolean   @default(false)
+  isFavorite Boolean   @default(false)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
 
-  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  messages  Message[]
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages   Message[]
+
+  @@index([userId])
+  @@index([updatedAt])
+  @@map("conversations")
 }
 
 model Message {
   id             String       @id @default(cuid())
   conversationId String
   role           String       // "user" | "assistant" | "system"
-  content        String
-  metadata       String?      // JSON string for tokens, reasoning, timing, etc.
+  content        String       @db.Text
+  metadata       String?      @db.Text // JSON string for tokens, reasoning, timing, etc.
   createdAt      DateTime     @default(now())
 
   conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
   attachments    Attachment[]
+
+  @@index([conversationId])
+  @@index([createdAt])
+  @@map("messages")
 }
 
 model Attachment {
@@ -62,10 +72,13 @@ model Attachment {
   fileName   String
   fileType   String
   fileSize   Int
-  storageUrl String
+  storageUrl String   @db.Text
   createdAt  DateTime @default(now())
 
   message    Message? @relation(fields: [messageId], references: [id], onDelete: Cascade)
+
+  @@index([messageId])
+  @@map("attachments")
 }
 
 model UsageRecord {
@@ -77,13 +90,16 @@ model UsageRecord {
   createdAt    DateTime @default(now())
 
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("usage_records")
 }
 
 model ModelConfiguration {
   id            String   @id @default(cuid())
   modelId       String   @unique
   name          String
-  description   String
+  description   String   @db.Text
   speedRating   String   @default("Ultra Fast")
   qualityRating String   @default("High")
   providerModel String   @default("gpt-4o-mini")
@@ -93,12 +109,16 @@ model ModelConfiguration {
   isDefault     Boolean  @default(false)
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+
+  @@map("model_configurations")
 }
 
 model SystemSetting {
   id          String   @id @default(cuid())
   key         String   @unique
-  value       String
-  description String?
+  value       String   @db.Text
+  description String?  @db.Text
   updatedAt   DateTime @updatedAt
+
+  @@map("system_settings")
 }
