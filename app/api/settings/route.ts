@@ -2,17 +2,18 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/db/prisma";
 import { getSessionUser } from "@/lib/auth/session";
 
-
 export async function GET() {
   try {
     const session = await getSessionUser();
     let userId = session?.userId;
 
     if (!userId) {
-      const demoUser = await prisma.user.findFirst({
-        where: { email: "demo@mindora.ai" },
-      });
-      userId = demoUser?.id;
+      try {
+        const demoUser = await prisma.user.findFirst({
+          where: { email: "demo@mindora.ai" },
+        });
+        userId = demoUser?.id;
+      } catch {}
     }
 
     if (!userId) {
@@ -39,6 +40,10 @@ export async function GET() {
       },
     });
 
+    if (!user) {
+      return NextResponse.json({ error: "User not found." }, { status: 404 });
+    }
+
     return NextResponse.json({ user });
   } catch (err: any) {
     console.error("Get settings error:", err);
@@ -52,10 +57,12 @@ export async function PATCH(req: Request) {
     let userId = session?.userId;
 
     if (!userId) {
-      const demoUser = await prisma.user.findFirst({
-        where: { email: "demo@mindora.ai" },
-      });
-      userId = demoUser?.id;
+      try {
+        const demoUser = await prisma.user.findFirst({
+          where: { email: "demo@mindora.ai" },
+        });
+        userId = demoUser?.id;
+      } catch {}
     }
 
     if (!userId) {

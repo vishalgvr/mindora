@@ -6,9 +6,11 @@ import { getSessionUser } from "@/lib/auth/session";
 export async function GET() {
   try {
     const session = await getSessionUser();
-    // Verify admin access
-    if (session && session.role !== "ADMIN") {
-      return NextResponse.json({ error: "Unauthorized admin access." }, { status: 403 });
+    if (!session || session.role !== "ADMIN") {
+      return NextResponse.json(
+        { error: "Unauthorized: Administrator privileges required." },
+        { status: 403 }
+      );
     }
 
     const [

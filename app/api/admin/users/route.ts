@@ -6,8 +6,8 @@ import { getSessionUser } from "@/lib/auth/session";
 export async function GET(req: Request) {
   try {
     const session = await getSessionUser();
-    if (session && session.role !== "ADMIN") {
-      return NextResponse.json({ error: "Unauthorized admin access." }, { status: 403 });
+    if (!session || session.role !== "ADMIN") {
+      return NextResponse.json({ error: "Unauthorized: Admin privileges required." }, { status: 403 });
     }
 
     const { searchParams } = new URL(req.url);
@@ -50,8 +50,8 @@ export async function GET(req: Request) {
 export async function PATCH(req: Request) {
   try {
     const session = await getSessionUser();
-    if (session && session.role !== "ADMIN") {
-      return NextResponse.json({ error: "Unauthorized admin access." }, { status: 403 });
+    if (!session || session.role !== "ADMIN") {
+      return NextResponse.json({ error: "Unauthorized: Admin privileges required." }, { status: 403 });
     }
 
     const body = await req.json();
@@ -77,8 +77,8 @@ export async function PATCH(req: Request) {
 export async function DELETE(req: Request) {
   try {
     const session = await getSessionUser();
-    if (session && session.role !== "ADMIN") {
-      return NextResponse.json({ error: "Unauthorized admin access." }, { status: 403 });
+    if (!session || session.role !== "ADMIN") {
+      return NextResponse.json({ error: "Unauthorized: Admin privileges required." }, { status: 403 });
     }
 
     const { searchParams } = new URL(req.url);

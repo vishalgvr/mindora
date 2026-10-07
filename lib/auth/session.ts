@@ -45,8 +45,26 @@ export async function getCurrentUser() {
         createdAt: true,
       },
     });
-    return user;
+    if (user) return user;
   } catch {
-    return null;
+    // Database query failed, fallback to JWT claims
   }
+
+  return {
+    id: session.userId,
+    name: session.name,
+    email: session.email,
+    role: session.role,
+    avatar: null,
+    occupation: null,
+    responsePreferences: null,
+    customInstructions: null,
+    theme: "dark",
+    language: "en",
+    defaultModel: "mindora-balanced",
+    enterToSend: true,
+    showTimestamps: true,
+    compactMode: false,
+    createdAt: new Date(),
+  };
 }

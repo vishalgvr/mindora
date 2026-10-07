@@ -5,23 +5,34 @@ import { AUTH_COOKIE_NAME } from "@/lib/auth/session";
 
 export async function POST(req: Request) {
   try {
-    const { role } = await req.json().catch(() => ({ role: "USER" }));
+    const { role = "USER" } = await req.json().catch(() => ({ role: "USER" }));
     const targetEmail = role === "ADMIN" ? "admin@mindora.ai" : "demo@mindora.ai";
+    const targetName = role === "ADMIN" ? "Mindora Administrator" : "Alex Morgan";
 
-    let user = await prisma.user.findUnique({
-      where: { email: targetEmail },
-    });
+    let user: any = null;
+    try {
+      user = await prisma.user.findUnique({
+        where: { email: targetEmail },
+      });
 
-    // If user somehow doesn't exist yet, fallback to any first user
-    if (!user) {
-      user = await prisma.user.findFirst();
+      if (!user) {
+        user = await prisma.user.findFirst();
+      }
+    } catch (dbErr) {
+      // Database offline fallback
     }
 
+    // Fallback virtual demo user if DB is cold or offline
     if (!user) {
-      return NextResponse.json(
-        { error: "Demo user not initialized. Please refresh." },
-        { status: 404 }
-      );
+      user = {
+        id: role === "ADMIN" ? "admin-user-01" : "demo-user-alex-01",
+        name: targetName,
+        email: targetEmail,
+        role: role,
+        avatar: "",
+        theme: "dark",
+        defaultModel: "mindora-balanced",
+      };
     }
 
     const token = signToken({
@@ -38,9 +49,9 @@ export async function POST(req: Request) {
         name: user.name,
         email: user.email,
         role: user.role,
-        avatar: user.avatar,
-        theme: user.theme,
-        defaultModel: user.defaultModel,
+        avatar: user.avatar || "",
+        theme: user.theme || "dark",
+        defaultModel: user.defaultModel || "mindora-balanced",
       },
     });
 

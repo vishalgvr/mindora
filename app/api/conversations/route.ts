@@ -2,21 +2,14 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/db/prisma";
 import { getSessionUser } from "@/lib/auth/session";
 
-
 export async function GET(req: Request) {
   try {
     const session = await getSessionUser();
-    let userId = session?.userId;
-
-    if (!userId) {
-      const demoUser = await prisma.user.findFirst({
-        where: { email: "demo@mindora.ai" },
-      });
-      userId = demoUser?.id;
-    }
-
-    if (!userId) {
-      return NextResponse.json({ conversations: [] });
+    if (!session?.userId) {
+      return NextResponse.json(
+        { error: "Unauthorized. Please sign in to view your conversations." },
+        { status: 401 }
+      );
     }
 
     const { searchParams } = new URL(req.url);
@@ -25,7 +18,7 @@ export async function GET(req: Request) {
     const favoritesOnly = searchParams.get("favorites") === "true";
 
     const whereClause: any = {
-      userId,
+      userId: session.userId,
       archived,
     };
 
@@ -74,17 +67,11 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
   try {
     const session = await getSessionUser();
-    let userId = session?.userId;
-
-    if (!userId) {
-      const demoUser = await prisma.user.findFirst({
-        where: { email: "demo@mindora.ai" },
-      });
-      userId = demoUser?.id;
-    }
-
-    if (!userId) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    if (!session?.userId) {
+      return NextResponse.json(
+        { error: "Unauthorized. Please sign in to create a conversation." },
+        { status: 401 }
+      );
     }
 
     const body = await req.json().catch(() => ({}));
@@ -92,7 +79,7 @@ export async function POST(req: Request) {
 
     const conversation = await prisma.conversation.create({
       data: {
-        userId,
+        userId: session.userId,
         title,
         model,
       },

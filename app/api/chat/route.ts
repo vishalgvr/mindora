@@ -16,13 +16,15 @@ export async function POST(req: Request) {
         });
         userId = demoUser?.id;
       } catch (dbErr) {
-        // Fallback demo user id if DB server offline
-        userId = "demo-user-offline-id";
+        userId = "demo-user-fallback-id";
       }
     }
 
     if (!userId) {
-      userId = "demo-user-offline-id";
+      return NextResponse.json(
+        { error: "Unauthorized. Please sign in to chat." },
+        { status: 401 }
+      );
     }
 
     const body = await req.json();
@@ -43,10 +45,12 @@ export async function POST(req: Request) {
     // Get user personalization settings safely
     let user: any = null;
     try {
-      user = await prisma.user.findUnique({
-        where: { id: userId },
-        select: { customInstructions: true, responsePreferences: true },
-      });
+      if (!userId.startsWith("demo-user-fallback")) {
+        user = await prisma.user.findUnique({
+          where: { id: userId },
+          select: { customInstructions: true, responsePreferences: true },
+        });
+      }
     } catch {}
 
     const latestUserMessage = messages[messages.length - 1];
@@ -54,67 +58,81 @@ export async function POST(req: Request) {
     let conversationId = incomingConvId || `conv_${Date.now()}`;
     let isNewConversation = !incomingConvId;
 
-    // 1. Create or find conversation in DB
+    // 1. Validate ownership or create new conversation
     try {
       if (!incomingConvId) {
         const rawTitle = latestUserMessage.content.trim() || "New Discussion";
         const cleanTitle =
           rawTitle.length > 36 ? rawTitle.substring(0, 36) + "..." : rawTitle;
 
-        const newConv = await prisma.conversation.create({
-          data: {
-            userId: userId.startsWith("demo-user") ? undefined as any : userId,
-            title: cleanTitle,
-            model: modelId,
-          },
-        });
-        conversationId = newConv.id;
-      } else {
-        const existingConv = await prisma.conversation.findUnique({
-          where: { id: conversationId },
-        });
-        if (!existingConv && !userId.startsWith("demo-user")) {
+        if (!userId.startsWith("demo-user-fallback")) {
           const newConv = await prisma.conversation.create({
             data: {
-              id: conversationId,
               userId,
-              title: latestUserMessage.content.substring(0, 36) || "New Discussion",
+              title: cleanTitle,
               model: modelId,
             },
           });
           conversationId = newConv.id;
         }
+      } else {
+        if (!userId.startsWith("demo-user-fallback")) {
+          const existingConv = await prisma.conversation.findUnique({
+            where: { id: conversationId },
+          });
+
+          if (existingConv && existingConv.userId !== userId) {
+            return NextResponse.json(
+              { error: "Forbidden: You do not have access to this conversation." },
+              { status: 403 }
+            );
+          }
+
+          if (!existingConv) {
+            const newConv = await prisma.conversation.create({
+              data: {
+                id: conversationId,
+                userId,
+                title: latestUserMessage.content.substring(0, 36) || "New Discussion",
+                model: modelId,
+              },
+            });
+            conversationId = newConv.id;
+          }
+        }
       }
     } catch (convDbErr) {
-      // Non-blocking fallback for DB offline
+      // Non-blocking fallback for offline db
     }
 
     // 2. Persist the user message to database
     try {
-      const savedUserMsg = await prisma.message.create({
-        data: {
-          conversationId,
-          role: "user",
-          content: latestUserMessage.content,
-        },
-      });
+      if (!userId.startsWith("demo-user-fallback")) {
+        const savedUserMsg = await prisma.message.create({
+          data: {
+            conversationId,
+            role: "user",
+            content: latestUserMessage.content,
+          },
+        });
 
-      // If attachments present, link them
-      if (attachments && attachments.length > 0) {
-        for (const att of attachments) {
-          await prisma.attachment.create({
-            data: {
-              messageId: savedUserMsg.id,
-              fileName: att.fileName || "file",
-              fileType: att.fileType || "application/octet-stream",
-              fileSize: att.fileSize || 0,
-              storageUrl: att.storageUrl || "",
-            },
-          });
+        // If attachments present, link them
+        if (attachments && attachments.length > 0) {
+          for (const att of attachments) {
+            await prisma.attachment.create({
+              data: {
+                messageId: savedUserMsg.id,
+                fileName: att.fileName || "file",
+                fileType: att.fileType || "application/octet-stream",
+                fileSize: att.fileSize || 0,
+                storageUrl: att.storageUrl || "",
+              },
+            });
+          }
         }
       }
     } catch (msgDbErr) {
-      // Non-blocking fallback for DB offline
+      // Non-blocking fallback
     }
 
     // 3. Initiate AI Stream
@@ -136,7 +154,7 @@ export async function POST(req: Request) {
       },
       async flush() {
         try {
-          if (accumulatedText.trim()) {
+          if (accumulatedText.trim() && !userId.startsWith("demo-user-fallback")) {
             await prisma.message.create({
               data: {
                 conversationId,
@@ -164,19 +182,17 @@ export async function POST(req: Request) {
             );
             const outputTokens = Math.ceil(accumulatedText.length / 4);
 
-            if (!userId.startsWith("demo-user")) {
-              await prisma.usageRecord.create({
-                data: {
-                  userId,
-                  model: modelId,
-                  inputTokens,
-                  outputTokens,
-                },
-              });
-            }
+            await prisma.usageRecord.create({
+              data: {
+                userId,
+                model: modelId,
+                inputTokens,
+                outputTokens,
+              },
+            });
           }
         } catch (dbErr) {
-          // Log non-fatal DB write failure if DB is offline
+          // Log non-fatal DB write failure
         }
       },
     });

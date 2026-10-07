@@ -2,12 +2,16 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/db/prisma";
 import { getSessionUser } from "@/lib/auth/session";
 
-
 export async function GET(
   req: Request,
   props: { params: Promise<{ id: string }> }
 ) {
   try {
+    const session = await getSessionUser();
+    if (!session?.userId) {
+      return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+    }
+
     const params = await props.params;
     const conversationId = params.id;
 
@@ -23,9 +27,9 @@ export async function GET(
       },
     });
 
-    if (!conversation) {
+    if (!conversation || conversation.userId !== session.userId) {
       return NextResponse.json(
-        { error: "Conversation not found." },
+        { error: "Conversation not found or access denied." },
         { status: 404 }
       );
     }
@@ -45,8 +49,25 @@ export async function PATCH(
   props: { params: Promise<{ id: string }> }
 ) {
   try {
+    const session = await getSessionUser();
+    if (!session?.userId) {
+      return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+    }
+
     const params = await props.params;
     const conversationId = params.id;
+
+    const existing = await prisma.conversation.findUnique({
+      where: { id: conversationId },
+    });
+
+    if (!existing || existing.userId !== session.userId) {
+      return NextResponse.json(
+        { error: "Conversation not found or access denied." },
+        { status: 404 }
+      );
+    }
+
     const body = await req.json();
     const { title, model, archived, isFavorite } = body;
 
@@ -76,8 +97,24 @@ export async function DELETE(
   props: { params: Promise<{ id: string }> }
 ) {
   try {
+    const session = await getSessionUser();
+    if (!session?.userId) {
+      return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+    }
+
     const params = await props.params;
     const conversationId = params.id;
+
+    const existing = await prisma.conversation.findUnique({
+      where: { id: conversationId },
+    });
+
+    if (!existing || existing.userId !== session.userId) {
+      return NextResponse.json(
+        { error: "Conversation not found or access denied." },
+        { status: 404 }
+      );
+    }
 
     await prisma.conversation.delete({
       where: { id: conversationId },

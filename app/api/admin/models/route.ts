@@ -18,8 +18,8 @@ export async function GET() {
 export async function PATCH(req: Request) {
   try {
     const session = await getSessionUser();
-    if (session && session.role !== "ADMIN") {
-      return NextResponse.json({ error: "Unauthorized admin access." }, { status: 403 });
+    if (!session || session.role !== "ADMIN") {
+      return NextResponse.json({ error: "Unauthorized: Admin privileges required." }, { status: 403 });
     }
 
     const body = await req.json();
