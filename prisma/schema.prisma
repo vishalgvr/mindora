@@ -1,0 +1,104 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                  String         @id @default(cuid())
+  name                String
+  email               String         @unique
+  password            String
+  role                String         @default("USER") // USER or ADMIN
+  avatar              String?
+  occupation          String?
+  responsePreferences String?
+  customInstructions  String?
+  theme               String         @default("system") // light, dark, system
+  language            String         @default("en")
+  defaultModel        String         @default("mindora-balanced")
+  enterToSend         Boolean        @default(true)
+  showTimestamps      Boolean        @default(true)
+  compactMode         Boolean        @default(false)
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+
+  conversations       Conversation[]
+  usageRecords        UsageRecord[]
+}
+
+model Conversation {
+  id        String    @id @default(cuid())
+  userId    String
+  title     String
+  model     String    @default("mindora-balanced")
+  archived  Boolean   @default(false)
+  isFavorite Boolean  @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages  Message[]
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  role           String       // "user" | "assistant" | "system"
+  content        String
+  metadata       String?      // JSON string for tokens, reasoning, timing, etc.
+  createdAt      DateTime     @default(now())
+
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  attachments    Attachment[]
+}
+
+model Attachment {
+  id         String   @id @default(cuid())
+  messageId  String?
+  fileName   String
+  fileType   String
+  fileSize   Int
+  storageUrl String
+  createdAt  DateTime @default(now())
+
+  message    Message? @relation(fields: [messageId], references: [id], onDelete: Cascade)
+}
+
+model UsageRecord {
+  id           String   @id @default(cuid())
+  userId       String
+  model        String
+  inputTokens  Int      @default(0)
+  outputTokens Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ModelConfiguration {
+  id            String   @id @default(cuid())
+  modelId       String   @unique
+  name          String
+  description   String
+  speedRating   String   @default("Ultra Fast")
+  qualityRating String   @default("High")
+  providerModel String   @default("gpt-4o-mini")
+  pricingInput  Float    @default(0.001)
+  pricingOutput Float    @default(0.002)
+  isEnabled     Boolean  @default(true)
+  isDefault     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model SystemSetting {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+}
