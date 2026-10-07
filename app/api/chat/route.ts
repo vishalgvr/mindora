@@ -3,13 +3,12 @@ import prisma from "@/lib/db/prisma";
 import { getSessionUser } from "@/lib/auth/session";
 import { streamChatResponse } from "@/lib/ai/provider";
 
-
 export async function POST(req: Request) {
   try {
     const session = await getSessionUser();
     let userId = session?.userId;
 
-    // Fallback to demo user if unauthenticated in demo mode
+    // Fallback to demo user if unauthenticated
     if (!userId) {
       const demoUser = await prisma.user.findFirst({
         where: { email: "demo@mindora.ai" },
@@ -108,7 +107,7 @@ export async function POST(req: Request) {
     }
 
     // 3. Initiate AI Stream
-    const { stream, isDemo } = await streamChatResponse({
+    const { stream, isDemo, modelUsed, providerName } = await streamChatResponse({
       modelId,
       messages,
       customInstructions: user?.customInstructions || user?.responsePreferences,
@@ -134,6 +133,8 @@ export async function POST(req: Request) {
                 content: accumulatedText,
                 metadata: JSON.stringify({
                   model: modelId,
+                  modelUsed,
+                  provider: providerName,
                   isDemo,
                   tokensEstimated: Math.ceil(accumulatedText.length / 4),
                 }),
@@ -175,6 +176,8 @@ export async function POST(req: Request) {
         "X-Conversation-Id": conversationId,
         "X-Is-New-Conversation": isNewConversation ? "true" : "false",
         "X-Mindora-Demo": isDemo ? "true" : "false",
+        "X-Model-Used": modelUsed || modelId,
+        "X-Provider-Name": providerName || "Mindora",
         "Cache-Control": "no-cache, no-transform",
       },
     });

@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/db/prisma";
 import { DEFAULT_MODELS } from "@/lib/ai/models";
-
+import { getAIBackendStatus } from "@/lib/ai/provider";
 
 export async function GET() {
   try {
+    const backendStatus = getAIBackendStatus();
     const dbModels = await prisma.modelConfiguration.findMany({
       where: { isEnabled: true },
       orderBy: { createdAt: "asc" },
@@ -29,12 +30,15 @@ export async function GET() {
           contextWindow: defaultDef?.contextWindow || "128k tokens",
         };
       });
-      return NextResponse.json({ models });
+      return NextResponse.json({ models, backendStatus });
     }
 
-    return NextResponse.json({ models: DEFAULT_MODELS });
+    return NextResponse.json({ models: DEFAULT_MODELS, backendStatus });
   } catch (err: any) {
     console.error("Fetch models error:", err);
-    return NextResponse.json({ models: DEFAULT_MODELS });
+    return NextResponse.json({
+      models: DEFAULT_MODELS,
+      backendStatus: { isConfigured: false, provider: "demo", defaultModel: "mindora-balanced" },
+    });
   }
 }

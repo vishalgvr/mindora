@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Copy, Check, RotateCw, Edit3, User, AlertCircle } from "lucide-react";
+import { Copy, Check, RotateCw, Edit3, User, AlertCircle, Sparkles } from "lucide-react";
 import { MarkdownRenderer } from "./MarkdownRenderer";
 import { AttachmentPreview, AttachmentItem } from "./AttachmentPreview";
 import { Logo } from "@/components/ui/Logo";
@@ -48,9 +48,11 @@ export function ChatMessage({
   let metaObj: any = null;
   if (message.metadata) {
     try {
-      metaObj = JSON.parse(message.metadata);
+      metaObj = typeof message.metadata === "string" ? JSON.parse(message.metadata) : message.metadata;
     } catch {}
   }
+
+  const isThinking = !isUser && isStreaming && isLast && (!message.content || message.content.trim() === "");
 
   return (
     <div
@@ -91,8 +93,8 @@ export function ChatMessage({
               {isUser ? "You" : "Mindora"}
             </span>
             {metaObj?.model && (
-              <span className="px-1.5 py-0.2 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] text-indigo-500 font-mono">
-                {metaObj.model}
+              <span className="px-1.5 py-0.5 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-[10px] text-indigo-600 dark:text-indigo-400 font-mono border border-indigo-100 dark:border-indigo-900/40">
+                {metaObj.modelUsed || metaObj.model}
               </span>
             )}
             {message.createdAt && (
@@ -114,9 +116,29 @@ export function ChatMessage({
               {message.content}
             </div>
           ) : message.isError ? (
-            <div className="flex items-center gap-2 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/50 p-3 text-sm text-rose-600 dark:text-rose-400">
-              <AlertCircle className="w-4 h-4 shrink-0" />
-              <span>{message.content}</span>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 w-full rounded-2xl bg-rose-50/80 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/50 p-4 text-sm text-rose-700 dark:text-rose-300 shadow-sm">
+              <div className="flex items-center gap-2.5">
+                <AlertCircle className="w-5 h-5 text-rose-500 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="font-semibold text-xs">Response Generation Error</span>
+                  <span className="text-xs text-rose-600 dark:text-rose-400">{message.content}</span>
+                </div>
+              </div>
+              {onRegenerate && (
+                <button
+                  type="button"
+                  onClick={onRegenerate}
+                  className="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-sm transition-all shrink-0 active:scale-95"
+                >
+                  <RotateCw className="w-3.5 h-3.5" />
+                  <span>Retry</span>
+                </button>
+              )}
+            </div>
+          ) : isThinking ? (
+            <div className="flex items-center gap-2 py-2 px-1 text-slate-400 text-xs">
+              <Sparkles className="w-4 h-4 text-indigo-500 animate-spin" style={{ animationDuration: "3s" }} />
+              <span className="animate-pulse font-medium">Mindora is thinking...</span>
             </div>
           ) : (
             <div className="w-full text-slate-800 dark:text-slate-200">
@@ -128,7 +150,7 @@ export function ChatMessage({
           )}
 
           {/* Action Toolbar */}
-          {!isStreaming && (
+          {!isStreaming && !isThinking && !message.isError && (
             <div
               className={cn(
                 "flex items-center gap-1 pt-1 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity text-slate-400",
@@ -144,7 +166,7 @@ export function ChatMessage({
                 {copied ? (
                   <>
                     <Check className="w-3.5 h-3.5 text-emerald-500" />
-                    <span className="text-[10px] text-emerald-500">Copied</span>
+                    <span className="text-[10px] text-emerald-500 font-medium">Copied</span>
                   </>
                 ) : (
                   <>

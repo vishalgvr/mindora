@@ -60,11 +60,18 @@ export default function NewChatPage() {
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
+        let errMsg = `Server returned ${response.status}`;
+        try {
+          const errJson = await response.json();
+          if (errJson?.error) errMsg = errJson.error;
+        } catch {}
+        throw new Error(errMsg);
       }
 
       const conversationId = response.headers.get("X-Conversation-Id");
       const isDemoHeader = response.headers.get("X-Mindora-Demo") === "true";
+      const modelUsed = response.headers.get("X-Model-Used") || selectedModelId;
+      const providerName = response.headers.get("X-Provider-Name") || "Mindora";
       setIsDemoMode(isDemoHeader);
 
       const reader = response.body?.getReader();
@@ -84,6 +91,12 @@ export default function NewChatPage() {
             const last = updated[updated.length - 1];
             if (last && last.role === "assistant") {
               last.content = fullText;
+              last.metadata = JSON.stringify({
+                model: selectedModelId,
+                modelUsed,
+                provider: providerName,
+                isDemo: isDemoHeader,
+              });
             }
             return updated;
           });
@@ -102,7 +115,7 @@ export default function NewChatPage() {
           const last = updated[updated.length - 1];
           if (last && last.role === "assistant") {
             last.content =
-              "Mindora couldn't complete that request. Something went wrong. Please try again.";
+              err?.message || "Mindora couldn't complete that request. Something went wrong. Please try again.";
             last.isError = true;
           }
           return updated;
@@ -125,14 +138,15 @@ export default function NewChatPage() {
     if (messages.length < 2 || isStreaming) return;
     const lastUserMsg = [...messages].reverse().find((m) => m.role === "user");
     if (lastUserMsg) {
-      const messagesWithoutLastAi = messages.slice(0, -1);
+      // Remove trailing assistant/error message
+      const messagesWithoutLastAi = messages.filter((_, idx) => idx < messages.length - 1);
       setMessages(messagesWithoutLastAi);
       handleSendMessage(lastUserMsg.content, lastUserMsg.attachments || []);
     }
   };
 
-  const handleEditMessage = (newContent: string) => {
-    // Put back into composer
+  const handleEditMessage = (_newContent: string) => {
+    // Content is placed into composer by ChatArea
   };
 
   return (
