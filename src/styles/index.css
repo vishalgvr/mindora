@@ -1,0 +1,398 @@
+/* ==========================================================================
+   MINDORA DIGITAL SOLUTIONS — BOOTSTRAP 5 THEME & STYLESHEET
+   Official Brand Palette (Derived from Mindora Violet & Cyan Squircle Logo):
+   - Primary Electric Violet: #7533FB (top gradient: #8537FC)
+   - Accent Sky Cyan: #38BDF8
+   - Deep Indigo / Dark Purple: #14092A / #1E1035
+   - Soft Tech Canvas (Body BG): #F8F9FE
+   - Pure Surface White: #FFFFFF
+   - Soft Indigo / Lavender Border: #E2E8F0 / #EDE9FE
+   - Body Text: #1E1B4B
+   - Muted Slate Text: #64748B
+   ========================================================================== */
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --color-primary: #7533FB;
+  --color-primary-dark: #1E1035;
+  --color-accent: #38BDF8;
+  --color-accent-dark: #0284C7;
+  --color-background: #F8F9FE;
+  --color-surface: #FFFFFF;
+  --color-sage: #38BDF8;
+  --color-soft-green: #E0E7FF;
+  --color-text: #1E1B4B;
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
+
+  /* Bootstrap Variable Overrides */
+  --bs-primary: #7533FB;
+  --bs-primary-rgb: 117, 51, 251;
+  --bs-body-bg: #F8F9FE;
+  --bs-body-color: #1E1B4B;
+  --bs-border-color: #E2E8F0;
+  --bs-font-sans-serif: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   BRAND COLOR UTILITIES (BOOTSTRAP COMPATIBLE)
+   ========================================================================== */
+
+/* Backgrounds */
+.bg-cream-main {
+  background-color: #F8F9FE !important;
+}
+
+.bg-surface {
+  background-color: #FFFFFF !important;
+}
+
+.bg-forest {
+  background-color: #7533FB !important;
+}
+
+.bg-forest-dark {
+  background-color: #14092A !important;
+}
+
+.bg-sage-subtle {
+  background-color: rgba(56, 189, 248, 0.12) !important;
+}
+
+.bg-botanical-subtle {
+  background-color: rgba(117, 51, 251, 0.08) !important;
+}
+
+.bg-forest-subtle {
+  background-color: rgba(117, 51, 251, 0.06) !important;
+}
+
+/* Text Colors */
+.text-forest {
+  color: #7533FB !important;
+}
+
+.text-forest-dark {
+  color: #1E1035 !important;
+}
+
+.text-sage {
+  color: #38BDF8 !important;
+}
+
+.text-cream {
+  color: #F8F9FE !important;
+}
+
+.text-cream-light {
+  color: #FFFFFF !important;
+}
+
+.text-body-custom {
+  color: #1E1B4B !important;
+}
+
+.text-muted-custom {
+  color: #64748B !important;
+}
+
+/* Borders */
+.border-custom {
+  border-color: #E2E8F0 !important;
+}
+
+.border-forest-custom {
+  border-color: #7533FB !important;
+}
+
+.border-sage-custom {
+  border-color: rgba(56, 189, 248, 0.4) !important;
+}
+
+/* Rounded Utilities */
+.rounded-4-custom {
+  border-radius: 1.25rem !important;
+}
+
+.rounded-5-custom {
+  border-radius: 1.75rem !important;
+}
+
+/* Shadows */
+.shadow-soft-custom {
+  box-shadow: 0 4px 20px -2px rgba(117, 51, 251, 0.06), 0 2px 6px -1px rgba(117, 51, 251, 0.03) !important;
+}
+
+.shadow-card-custom {
+  box-shadow: 0 10px 30px -4px rgba(20, 9, 42, 0.06), 0 4px 10px -2px rgba(20, 9, 42, 0.03) !important;
+}
+
+.shadow-hover-custom {
+  box-shadow: 0 20px 40px -6px rgba(117, 51, 251, 0.18), 0 8px 16px -4px rgba(117, 51, 251, 0.08) !important;
+}
+
+/* Card Mindora styling (also aliases growvia for backward-compat) */
+.card-growvia,
+.card-mindora {
+  background-color: #FFFFFF;
+  border: 1px solid #EDE9FE;
+  border-radius: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-growvia:hover,
+.card-mindora:hover {
+  transform: translateY(-4px);
+  border-color: #DDD6FE;
+  box-shadow: 0 20px 40px -6px rgba(117, 51, 251, 0.16);
+}
+
+/* Ambient patterns */
+.bg-mesh-pattern {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(117, 51, 251, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.14) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(117, 51, 251, 0.08) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(248, 249, 254, 0.6) 0px, transparent 50%);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn-forest {
+  background: linear-gradient(135deg, #8537FC 0%, #7533FB 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8125rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(117, 51, 251, 0.28);
+}
+
+.btn-forest:hover, .btn-forest:focus {
+  background: linear-gradient(135deg, #7533FB 0%, #6422EA 100%);
+  color: #FFFFFF;
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(117, 51, 251, 0.4);
+}
+
+.btn-forest-outline {
+  background-color: transparent;
+  color: #7533FB;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8125rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50rem;
+  border: 1.5px solid #7533FB;
+  transition: all 0.3s ease;
+}
+
+.btn-forest-outline:hover {
+  background-color: #7533FB;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(117, 51, 251, 0.25);
+}
+
+.btn-cream {
+  background-color: #FFFFFF;
+  color: #1E1035;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8125rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50rem;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(20, 9, 42, 0.04);
+}
+
+.btn-cream:hover {
+  background-color: #F8F9FE;
+  color: #7533FB;
+  border-color: #DDD6FE;
+}
+
+.btn-light-growvia,
+.btn-light-mindora {
+  background-color: #FFFFFF;
+  color: #7533FB;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8125rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50rem;
+  border: 1px solid #EDE9FE;
+  transition: all 0.3s ease;
+}
+
+.btn-light-growvia:hover,
+.btn-light-mindora:hover {
+  background-color: #F8F9FE;
+  color: #6422EA;
+}
+
+/* ==========================================================================
+   BADGES & PILLS
+   ========================================================================== */
+
+.badge-growvia,
+.badge-mindora {
+  background-color: rgba(117, 51, 251, 0.1);
+  color: #7533FB;
+  border: 1px solid rgba(117, 51, 251, 0.2);
+  border-radius: 50rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.badge-sage {
+  background-color: rgba(56, 189, 248, 0.15);
+  color: #0284C7;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 50rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
+
+.navbar-growvia,
+.navbar-mindora {
+  background-color: rgba(248, 249, 254, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.3s ease;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
+.navbar-growvia.scrolled,
+.navbar-mindora.scrolled {
+  box-shadow: 0 4px 20px rgba(20, 9, 42, 0.06);
+}
+
+.nav-link-growvia,
+.nav-link-mindora {
+  color: #1E1B4B !important;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.95rem !important;
+  border-radius: 50rem;
+  transition: all 0.2s ease;
+}
+
+.nav-link-growvia:hover, .nav-link-growvia.active,
+.nav-link-mindora:hover, .nav-link-mindora.active {
+  color: #7533FB !important;
+  background-color: rgba(117, 51, 251, 0.08);
+  font-weight: 700;
+}
+
+/* Custom Mega Dropdown */
+.dropdown-menu-growvia,
+.dropdown-menu-mindora {
+  background-color: #FFFFFF;
+  border: 1px solid #EDE9FE;
+  border-radius: 1.25rem;
+  box-shadow: 0 15px 35px rgba(20, 9, 42, 0.1);
+  padding: 0.85rem;
+}
+
+.dropdown-item-growvia,
+.dropdown-item-mindora {
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  transition: all 0.2s ease;
+  color: #1E1B4B;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item-growvia:hover,
+.dropdown-item-mindora:hover {
+  background-color: #F8F9FE;
+  color: #7533FB;
+}
+
+/* Form inputs */
+.form-control-growvia, .form-select-growvia,
+.form-control-mindora, .form-select-mindora {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.85rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #1E1B4B;
+  transition: all 0.2s ease;
+}
+
+.form-control-growvia:focus, .form-select-growvia:focus,
+.form-control-mindora:focus, .form-select-mindora:focus {
+  background-color: #FFFFFF;
+  border-color: #7533FB;
+  box-shadow: 0 0 0 0.2rem rgba(117, 51, 251, 0.16);
+  outline: none;
+  color: #1E1035;
+}
+
+/* Floating WhatsApp button */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 1050;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border-radius: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+  color: white;
+}

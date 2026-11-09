@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
+  <defs>
+    <linearGradient id="mindora-h-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8537FC"/>
+      <stop offset="100%" stop-color="#7332FB"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon Squircle -->
+  <g transform="translate(4, 5)">
+    <rect width="50" height="50" rx="14" fill="url(#mindora-h-grad)"/>
+    <circle cx="25" cy="16.5" r="2.6" fill="#38BDF8"/>
+    <polyline
+      points="14,35 14,20.5 20.5,26.5 25,22.5 29.5,26.5 36,20.5 36,35"
+      fill="none"
+      stroke="#FFFFFF"
+      stroke-width="2.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+  <!-- Wordmark -->
+  <text x="66" y="34" font-family="'Plus Jakarta Sans', 'Outfit', sans-serif" font-size="24" font-weight="800" letter-spacing="1.5" fill="#1E1035">MINDORA</text>
+  <text x="67" y="47" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" letter-spacing="3.2" fill="#7533FB">DIGITAL SOLUTIONS</text>
+</svg>

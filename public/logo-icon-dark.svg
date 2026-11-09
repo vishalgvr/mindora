@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="mindora-grad-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8537FC"/>
+      <stop offset="100%" stop-color="#7332FB"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="28" fill="url(#mindora-grad-dark)"/>
+  <circle cx="50" cy="33.5" r="4.8" fill="#38BDF8"/>
+  <polyline
+    points="28.5,69.5 28.5,41.5 41.5,53.5 50,45.0 58.5,53.5 71.5,41.5 71.5,69.5"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="5.3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

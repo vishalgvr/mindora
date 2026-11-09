@@ -1,143 +1,117 @@
-# Mindora — AI Chat Web Portal
-> **"Think. Create. Discover."**
+# GROWVIA — Premium Digital Solutions Platform
 
-Mindora is an independent, production-ready AI workspace designed for high-velocity conversations, creative ideation, deep research, and production code engineering.
-
----
-
-## 🌟 Key Features
-
-### 1. Multi-Tier AI Intelligence Engine
-- **Mindora Fast**: Optimized for speed, quick summaries, proofreading, and general Q&A.
-- **Mindora Balanced**: Versatile intelligence for nuanced writing, full-stack programming, and data analysis.
-- **Mindora Pro**: Deliberate step-by-step reasoning for architectural design, complex math, and deep research.
-- **Zero-Crash Smart Demo Mode**: Works instantly out of the box with simulated streaming when no external AI API key is configured.
-- **Provider Abstraction**: Switchable backend supporting OpenAI, Anthropic Claude, Google Gemini, or local models.
-
-### 2. Conversational Workspace
-- **Real-Time Streaming**: Progressive response generation with low latency and streaming cursor.
-- **Rich Markdown & Code**: Fenced syntax highlighting, language badges, and one-click code copy.
-- **Composer Controls**: Expanding multiline textarea, Stop streaming button, prompt suggestion pills.
-- **Document & Image Attachments**: Support for PDF, DOCX, TXT, CSV, XLSX, and image previews.
-- **Voice UI**: Microphone input with speech waveform and browser SpeechRecognition / transcription.
-- **Message Actions**: Copy response, Edit user prompt, and Regenerate responses.
-
-### 3. Conversation Management
-- Grouped chronological history (Today, Yesterday, Previous 7 Days, Older).
-- Instant Search (shortcut `Ctrl + K` / `Cmd + K`).
-- Star/Favorite conversations & Archive tabs.
-- Inline rename & deletion confirmation dialogs.
-- Export chats to **Markdown (`.md`)** or **JSON (`.json`)** with one click.
-
-### 4. Authentication & Personalization
-- Email & password authentication with bcrypt hashing and JWT session cookies.
-- **1-Click Demo Logins** (Alex Morgan & Admin Console) for friction-free evaluation.
-- Personalized settings: Occupation, Response style preferences, and Custom System Instructions.
-- Theme switching: **Light**, **Dark**, and **System** mode with OLED-optimized contrast.
-
-### 5. Master Admin Console (`/admin`)
-- **Overview Metrics**: Total users, active conversations, token throughput, and estimated API costs.
-- **User Management**: Search users, toggle Administrator privileges, and delete accounts.
-- **Model Engine**: Configure model pricing ($ per 1k input/output tokens), enable/disable models, and set defaults.
-- **System Settings**: Toggle public registration, maintenance mode, character limits, and upload size caps.
+> **Smart Technology. Natural Growth.**  
+> Independent Digital Solutions Company based in Mauritius, operating in partnership with the Klyssel Labs technology ecosystem.
 
 ---
 
-## 🚀 Quick Start Guide
+## 1. Architectural Overview
+
+Growvia's digital platform is a modern, responsive, high-performance web application built entirely on the frontend with:
+- **UI Framework**: **Bootstrap 5** with custom brand styling & responsive grid layouts
+- **Core Stack**: React 18, TypeScript, Vite, and Lucide Icons
+- **Backend Requirement**: **None**. The platform operates 100% independently on the client side with instant enquiry generation, localStorage persistence, and 1-click WhatsApp & corporate email dispatch.
+- **Brand Palette**:
+  - Primary Forest Green: `#265541`
+  - Primary Warm Cream: `#FDF2DE`
+  - Deep Forest: `#173B2C`
+  - Muted Sage: `#9CAF88`
+  - Soft Botanical Green: `#D8E2D0`
+  - Warm White: `#FFFCF5`
+  - Body Text: `#253B32`
+  - Subtle Border: `#E5DDCB`
+
+---
+
+## 2. Project Directory Structure
+
+```
+growvia/
+├── src/                           # Frontend Source
+│   ├── assets/logo/               # SVG logo assets
+│   ├── components/                # Reusable Bootstrap 5 components
+│   │   ├── Navbar.tsx             # Sticky navigation with Services & Products dropdowns
+│   │   ├── Footer.tsx             # Footer with ecosystem disclaimers & legal links
+│   │   ├── Hero.tsx               # Animated visual composition & hero headlines
+│   │   ├── ServiceCard.tsx        # Service category card with capabilities
+│   │   ├── ProductCard.tsx        # Ecosystem product card with verified features
+│   │   ├── IndustryCard.tsx       # Vertical industry showcases
+│   │   ├── CTASection.tsx         # High-converting call to action
+│   │   ├── ContactForm.tsx        # Client-side quotation workflow with WhatsApp/email dispatch
+│   │   ├── WhatsAppButton.tsx     # Floating WhatsApp button with prefilled message
+│   │   ├── Logo.tsx               # Scalable geometric architectural 'G' SVG logo
+│   │   └── SEO.tsx                # Dynamic document metadata & canonical tags
+│   ├── pages/                     # Full multi-page routes
+│   │   ├── Home.tsx               # 10 comprehensive homepage sections
+│   │   ├── Services.tsx           # All 8 digital service disciplines
+│   │   ├── Products.tsx           # Klyssel One, Klyssel One Lite, Klyx Chatbot AI + Bootstrap Modal
+│   │   ├── Industries.tsx         # 8 specialized industry verticals
+│   │   ├── About.tsx              # Story, values & two directors governance
+│   │   ├── Contact.tsx            # Quotation & enquiry workflow
+│   │   ├── Insights.tsx           # Technology blog & executive briefings
+│   │   ├── PrivacyPolicy.tsx      # Mauritius DPA 2017 & GDPR compliance
+│   │   └── Terms.tsx              # Commercial engagement terms
+│   ├── config/company.ts          # Centralized configuration (WhatsApp, phone, email, directors)
+│   ├── data/                      # Centralized data files (services, products, industries, insights)
+│   ├── styles/index.css           # Bootstrap 5 theme stylesheet & brand palette
+│   └── services/api.ts            # Client-side lead service (reference generation & dispatch)
+│
+├── public/                        # Static assets (Favicon, SVG logos, robots.txt, sitemap.xml)
+├── package.json                   # Frontend dependencies & scripts
+└── dist/                          # Production compiled bundle
+```
+
+---
+
+## 3. How to Run Locally
 
 ### Prerequisites
-- Node.js (v18.17+ or v20+)
-- npm or yarn
+- Node.js (v18+)
 
-### 1. Installation
+### Development Server
 ```bash
+# 1. Install dependencies (if not already installed)
 npm install
-```
 
-### 2. Configure Environment
-A default `.env` file is already created for instant zero-config local runs:
-```env
-# Database (SQLite default for instant local run, PostgreSQL supported)
-DATABASE_URL="file:./dev.db"
-
-# Authentication Secret
-AUTH_SECRET="mindora_super_secret_session_token_key_change_in_prod_82947192"
-
-# AI Provider (Leave as demo or configure live provider)
-AI_PROVIDER="demo"
-AI_API_KEY=""
-AI_MODEL="mindora-balanced"
-
-# App Branding
-NEXT_PUBLIC_APP_NAME="Mindora"
-NEXT_PUBLIC_APP_TAGLINE="Think. Create. Discover."
-NEXT_PUBLIC_APP_URL="http://localhost:3000"
-```
-
-### 3. Initialize & Seed Database
-```bash
-npx prisma generate
-npx prisma db push
-npx tsx lib/db/seed.ts
-```
-
-### 4. Start the Development Server
-```bash
+# 2. Start the Vite development server
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) (or `http://localhost:3001`) in your browser.
+
+Visit **`http://localhost:5173/`** to view the live website.
 
 ---
 
-## 🔑 Demo Accounts
+## 4. Production Build
 
-| Account Type | Email | Password | Access |
-| :--- | :--- | :--- | :--- |
-| **Demo User** | `demo@mindora.ai` | `password123` | Full Chat Workspace & Settings |
-| **Administrator** | `admin@mindora.ai` | `admin123` | Full Access + `/admin` Console |
-
-*You can also use the **1-Click Demo Login** buttons on the `/login` page.*
-
----
-
-## 🛠️ Tech Stack & Architecture
-
+To build the static distribution for production:
+```bash
+npm run build
 ```
-/app
-  ├── page.tsx               # Main Landing Page (Hero, Live Demo, Features)
-  ├── chat/layout.tsx        # Persistent responsive chat shell
-  ├── chat/page.tsx          # New chat workspace
-  ├── chat/[id]/page.tsx     # Loaded conversation thread
-  ├── login/page.tsx         # Sign in & 1-click trial access
-  ├── signup/page.tsx        # Account registration
-  ├── settings/page.tsx      # User preferences & personalization
-  ├── admin/page.tsx         # Master control dashboard
-  └── api/                   # Server-side API & streaming routes
 
-/components
-  ├── chat/                  # ChatArea, ChatMessage, ChatComposer, ModelSelector, VoiceModal
-  ├── sidebar/               # Sidebar, ConversationItem, SearchModal
-  ├── header/                # Header, ThemeToggle, Export controls
-  ├── settings/              # SettingsView (General, Appearance, Privacy)
-  ├── admin/                 # AdminDashboard (Overview, Users, Models, System)
-  └── ui/                    # Logo, Button, Input, Card, Badge, Switch, Dialog
-
-/lib
-  ├── ai/                    # Unified AI provider, models, smart streaming simulation
-  ├── auth/                  # JWT tokens, server cookies, session helpers
-  ├── db/                    # Prisma client singleton and seeder
-  └── utils/                 # Class names, formatters, export utilities
-
-/prisma
-  └── schema.prisma          # Database schema (User, Conversation, Message, UsageRecord, etc.)
+This compiles optimized production assets into `dist/`. You can preview the build with:
+```bash
+npm run preview
 ```
 
 ---
 
-## 🌐 Deploying to Vercel or Cloud Hosting
+## 5. Deployment Options
 
-1. Connect your GitHub repository to [Vercel](https://vercel.com).
-2. Set your PostgreSQL database connection string in `DATABASE_URL` (e.g. Supabase, Neon, or Railway).
-3. Update `prisma/schema.prisma` datasource provider from `"sqlite"` to `"postgresql"`.
-4. Add `AUTH_SECRET` and your AI provider credentials (`AI_API_KEY`, `AI_PROVIDER`).
-5. Deploy!
+Because this website has **no backend dependencies**, it can be deployed instantly to any static host or web server:
+- **Vercel**: Import repository; build command `npm run build`, output directory `dist`.
+- **Netlify**: Drag and drop the `dist/` folder, or link git repository.
+- **GitHub Pages / Cloudflare Pages**: Connect branch and set publish directory to `dist/`.
+- **Apache / Nginx / cPanel**: Upload the contents of `dist/` directly to `public_html`.
+
+---
+
+## 6. Configurable Placeholders
+
+All company contact details, director information, and partnership notices are centralized in:
+`src/config/company.ts`
+
+- **WhatsApp Number**: update `COMPANY_CONFIG.contact.whatsappNumber`
+- **Email Address**: update `COMPANY_CONFIG.contact.email`
+- **Phone Line**: update `COMPANY_CONFIG.contact.phone`
+- **Directors**: update `COMPANY_CONFIG.structure.directors`
+- **Registered Office**: update `COMPANY_CONFIG.location.registeredOfficePlaceholder`
