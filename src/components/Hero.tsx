@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
             {/* Introductory Label with pulsing beacon */}
             <div className="badge-growvia mb-3 shadow-sm">
               <span className="beacon-dot" />
-              <span>DIGITAL SOLUTIONS FOR GROWING BUSINESSES</span>
+              <span>AI & DIGITAL SOLUTIONS</span>
             </div>
 
             {/* Main Headline */}
@@ -52,8 +52,7 @@ export const Hero: React.FC = () => {
 
             {/* Supporting Description */}
             <p className="fs-5 text-secondary mb-4 pe-lg-4" style={{ lineHeight: '1.6', fontWeight: 300, color: '#CBD5E1' }}>
-              Empowering businesses with intelligent technology, innovative digital solutions, and
-              software designed to simplify operations and accelerate sustainable growth.
+              Empowering modern enterprises with autonomous AI workflows, bespoke software, and scalable digital ecosystems.
             </p>
 
             {/* Action Buttons */}
@@ -62,7 +61,7 @@ export const Hero: React.FC = () => {
                 to="/services"
                 className="btn btn-forest d-inline-flex align-items-center justify-content-center gap-2"
               >
-                <span>Explore Our Solutions</span>
+                <span>Explore Solutions</span>
                 <ArrowRight size={16} />
               </Link>
 
@@ -70,7 +69,7 @@ export const Hero: React.FC = () => {
                 to="/contact"
                 className="btn btn-light-growvia d-inline-flex align-items-center justify-content-center"
               >
-                Talk to Our Team
+                Talk to Team
               </Link>
             </div>
 
@@ -78,15 +77,15 @@ export const Hero: React.FC = () => {
             <div className="pt-4 border-top border-custom d-flex flex-wrap align-items-center gap-4 text-muted-custom fs-8" style={{ fontSize: '0.8rem' }}>
               <div className="d-flex align-items-center gap-2">
                 <ShieldCheck size={16} className="text-sage" />
-                <span>Mauritius-Based Leadership</span>
+                <span>Mauritius Leadership</span>
               </div>
               <div className="d-flex align-items-center gap-2">
                 <Cpu size={16} className="text-sage" />
-                <span>Enterprise Technology Ecosystem</span>
+                <span>Enterprise Ecosystem</span>
               </div>
               <div className="d-flex align-items-center gap-2">
                 <CheckCircle size={16} className="text-sage" />
-                <span>Indian Ocean & Global Reach</span>
+                <span>Global Reach</span>
               </div>
             </div>
           </div>

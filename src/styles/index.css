@@ -586,7 +586,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-12px) rotate(0.8deg);
+    transform: translateY(-8px) rotate(0.4deg);
   }
 }
 
@@ -595,25 +595,51 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(12px) rotate(-0.8deg);
+    transform: translateY(8px) rotate(-0.4deg);
   }
 }
 
 @keyframes pulse-glow {
   0%, 100% {
-    opacity: 0.3;
+    opacity: 0.25;
     transform: scale(1);
   }
   50% {
-    opacity: 0.6;
-    transform: scale(1.05);
+    opacity: 0.55;
+    transform: scale(1.04);
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 .animate-float-slow {
-  animation: float-slow 8s ease-in-out infinite;
+  animation: float-slow 9s ease-in-out infinite;
 }
 
 .animate-float-reverse {
-  animation: float-reverse 10s ease-in-out infinite;
+  animation: float-reverse 11s ease-in-out infinite;
 }
+
+/* Minimalist Link Underline Hover */
+.hover-glow-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.hover-glow-link:hover {
+  color: #38BDF8 !important;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+

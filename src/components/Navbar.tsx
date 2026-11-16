@@ -115,7 +115,7 @@ export const Navbar: React.FC = () => {
                                 onClick={() => setActiveDropdown(null)}
                               >
                                 <div className="d-flex align-items-center justify-content-between mb-1">
-                                  <span className="fw-bold fs-7 text-forest-dark" style={{ fontSize: '0.8rem' }}>
+                                  <span className="fw-bold fs-7 text-white" style={{ fontSize: '0.8rem' }}>
                                     {child.name}
                                   </span>
                                   {child.tag && (
@@ -147,7 +147,7 @@ export const Navbar: React.FC = () => {
                           </span>
                           <Link
                             to={item.href}
-                            className="text-forest fw-bold text-decoration-none fs-8 d-inline-flex align-items-center gap-1"
+                            className="text-sage fw-bold text-decoration-none fs-8 d-inline-flex align-items-center gap-1"
                             style={{ fontSize: '0.75rem' }}
                             onClick={() => setActiveDropdown(null)}
                           >

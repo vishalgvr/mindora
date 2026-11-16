@@ -24,25 +24,24 @@ export const Services: React.FC = () => {
     <div className="w-100">
       <SEO
         title="Digital Services | AI, Software & Automation — Mindora Mauritius"
-        description="Explore Mindora's digital services: AI development, custom software, mobile apps, data analytics, BI, data engineering, UI/UX, and technology consulting."
+        description="Explore Mindora's 6 core digital services: AI development, custom software, mobile apps, data analytics, data engineering, and digital marketing."
         canonicalPath="/services"
       />
 
       {/* Header Banner */}
       <section className="py-5 bg-surface border-bottom border-custom text-center position-relative">
-        <div className="container py-lg-4" style={{ maxWidth: '780px' }}>
+        <div className="container py-lg-4" style={{ maxWidth: '720px' }}>
           <div className="badge-growvia mb-3">
             <Sparkles size={13} className="text-sage" />
-            <span>SOLUTIONS ARCHITECTURE & DELIVERY</span>
+            <span>CORE DISCIPLINES</span>
           </div>
 
           <h1 className="display-6 fw-extrabold text-gradient-luxury mb-3">
-            Digital Services Designed Around Your Business.
+            Digital Services Designed for Impact.
           </h1>
 
           <p className="fs-6 text-secondary mb-4" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
-            Discover technology and digital services that help businesses modernize operations,
-            improve customer experiences, and unlock new opportunities.
+            High-velocity software engineering, autonomous AI workflows, and data ecosystems built to scale.
           </p>
 
           {/* Filter Pills */}
@@ -54,7 +53,7 @@ export const Services: React.FC = () => {
               }`}
               style={{ fontSize: '0.78rem' }}
             >
-              All 8 Disciplines
+              All 6 Services
             </button>
             {SERVICES_DATA.map((s) => (
               <button
@@ -87,16 +86,16 @@ export const Services: React.FC = () => {
                 <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center pb-4 mb-4 border-bottom border-custom gap-3">
                   <div className="d-flex align-items-start gap-3">
                     <div
-                      className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm"
-                      style={{ width: '56px', height: '56px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
+                      className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm"
+                      style={{ width: '52px', height: '52px', border: '1px solid rgba(255, 255, 255, 0.1)' }}
                     >
-                      <ServiceIcon name={service.iconName} size={28} />
+                      <ServiceIcon name={service.iconName} size={26} />
                     </div>
                     <div>
                       <span className="font-monospace fw-bold text-sage text-uppercase fs-8 d-block mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.06em' }}>
-                        Service Category {service.number}
+                        Service {service.number}
                       </span>
-                      <h2 className="h3 fw-extrabold text-white mb-0">
+                      <h2 className="h4 fw-extrabold text-white mb-0">
                         {service.title}
                       </h2>
                     </div>
@@ -120,19 +119,19 @@ export const Services: React.FC = () => {
                   <div className="col-12 col-lg-7">
                     <div className="mb-4">
                       <h3 className="text-uppercase fw-bold text-sage fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
-                        Strategic Business Value
+                        Commercial Value
                       </h3>
-                      <p className="fs-7 text-secondary mb-0" style={{ fontSize: '0.9rem', lineHeight: '1.6', color: '#CBD5E1' }}>
+                      <p className="fs-7 text-secondary mb-0" style={{ fontSize: '0.88rem', lineHeight: '1.6', color: '#CBD5E1' }}>
                         {service.businessValue}
                       </p>
                     </div>
 
                     <div>
                       <h3 className="text-uppercase fw-bold text-white fs-8 mb-3" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
-                        Core Specialized Capabilities:
+                        Specialized Capabilities:
                       </h3>
                       <div className="row g-2">
-                        {service.subServices.map((sub) => (
+                        {service.subServices.slice(0, 4).map((sub) => (
                           <div key={sub.name} className="col-12 col-sm-6">
                             <div className="p-3 rounded-3 bg-surface-solid border border-custom h-100">
                               <div className="fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.8rem' }}>
@@ -154,11 +153,11 @@ export const Services: React.FC = () => {
                       <div>
                         <h3 className="text-uppercase fw-bold text-white fs-8 d-flex align-items-center gap-1.5 mb-3" style={{ fontSize: '0.75rem' }}>
                           <Layers size={14} className="text-sage" />
-                          Standard Deliverables & Assets
+                          Key Deliverables
                         </h3>
 
                         <ul className="list-unstyled d-flex flex-column gap-2 mb-0">
-                          {service.deliverables.map((item, idx) => (
+                          {service.deliverables.slice(0, 4).map((item, idx) => (
                             <li key={idx} className="d-flex align-items-start gap-2 fs-8" style={{ fontSize: '0.78rem', color: '#CBD5E1' }}>
                               <CheckCircle2 size={13} className="text-sage flex-shrink-0 mt-0.5" />
                               <span>{item}</span>
@@ -171,7 +170,7 @@ export const Services: React.FC = () => {
                       <div className="mt-4 pt-3 border-top border-custom p-2.5 rounded-3 bg-surface border border-custom fs-8" style={{ fontSize: '0.72rem', lineHeight: '1.4' }}>
                         <div className="d-flex align-items-center gap-1 fw-bold text-white mb-1">
                           <Info size={12} className="text-sage" />
-                          <span>Delivery Arrangement Note:</span>
+                          <span>Delivery SLA:</span>
                         </div>
                         <p className="mb-0 text-muted-custom">{service.deliveryModelNotice}</p>
                       </div>
@@ -201,8 +200,8 @@ export const Services: React.FC = () => {
 
       {/* CTA Section */}
       <CTASection
-        headline="Ready to Modernize Your Operations?"
-        description="Book a technical discovery session with Mindora's digital solutions leads in Mauritius."
+        headline="Ready to Elevate Your Digital Systems?"
+        description="Schedule a focused discovery session with Mindora's solutions leads in Mauritius."
       />
     </div>
   );

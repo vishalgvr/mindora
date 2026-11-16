@@ -12,9 +12,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, featured = fa
   return (
     <div
       id={product.id}
-      className={`card card-growvia h-100 p-4 d-flex flex-column justify-content-between ${
-        featured ? 'border-beam-card border-forest-custom shadow-hover-custom' : 'shadow-card-custom'
-      }`}
+      className={`card card-growvia h-100 p-4 d-flex flex-column justify-content-between ${featured ? 'border-beam-card border-forest-custom shadow-hover-custom' : 'shadow-card-custom'
+        }`}
     >
       <div>
         {/* Top Badges */}

@@ -49,16 +49,6 @@ export const MAIN_NAV: NavItem[] = [
         href: "/services#digital-marketing",
         description: "GEO, AI-assisted search optimization, PPC ads, and GA4 tracking.",
       },
-      {
-        name: "UI/UX Design Services",
-        href: "/services#ui-ux-design",
-        description: "Design systems, clickable prototypes, and usability testing.",
-      },
-      {
-        name: "Technology Consulting",
-        href: "/services#tech-consulting",
-        description: "Digital transformation roadmaps, tech audits, and security reviews.",
-      },
     ],
   },
   {

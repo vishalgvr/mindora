@@ -40,66 +40,61 @@ export const Home: React.FC = () => {
       {/* SECTION 2: INTRODUCTION */}
       <section className="py-5 bg-surface border-top border-bottom border-custom">
         <div className="container py-lg-4">
-          <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
-            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+          <div className="text-center mx-auto mb-5" style={{ maxWidth: '640px' }}>
+            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.08em' }}>
               ABOUT MINDORA
             </span>
             <h2 className="display-6 fw-extrabold text-gradient-luxury mb-3">
-              Technology That Moves Your Business Forward.
+              Technology That Moves Business Forward.
             </h2>
             <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
-              Mindora connects businesses with modern digital technologies, software solutions, and
-              expert services. We simplify the process of finding, implementing, and managing the
-              right technology for your business.
+              We design, build, and deploy intelligent software ecosystems that eliminate operational friction and accelerate growth.
             </p>
           </div>
 
           {/* Three Core Principles */}
           <div className="row g-4">
             <div className="col-12 col-md-4">
-              <div className="card card-growvia h-100 p-4 p-lg-5 shadow-card-custom">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center mb-4 shadow-sm"
-                  style={{ width: '48px', height: '48px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
+                  className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3 shadow-sm"
+                  style={{ width: '44px', height: '44px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                 >
-                  <Zap size={22} />
+                  <Zap size={20} />
                 </div>
-                <h3 className="h5 fw-bold text-white mb-2">Smart Solutions</h3>
-                <p className="text-secondary fs-7 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                  Applied AI automation and custom software designed around your real operational
-                  challenges, eliminating bottlenecks without unnecessary bloat.
+                <h3 className="h6 fw-bold text-white mb-2">Smart Solutions</h3>
+                <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.82rem', lineHeight: '1.5', color: '#94A3B8' }}>
+                  Applied AI automation and custom software tailored to your workflows, eliminating manual bottlenecks without bloat.
                 </p>
               </div>
             </div>
 
             <div className="col-12 col-md-4">
-              <div className="card card-growvia h-100 p-4 p-lg-5 shadow-card-custom">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center mb-4 shadow-sm"
-                  style={{ width: '48px', height: '48px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
+                  className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3 shadow-sm"
+                  style={{ width: '44px', height: '44px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                 >
-                  <ShieldCheck size={22} />
+                  <ShieldCheck size={20} />
                 </div>
-                <h3 className="h5 fw-bold text-white mb-2">Reliable Technology</h3>
-                <p className="text-secondary fs-7 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                  Enterprise-grade security, tested software architectures, and verified software
-                  products backed by transparent service level guarantees.
+                <h3 className="h6 fw-bold text-white mb-2">Reliable Technology</h3>
+                <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.82rem', lineHeight: '1.5', color: '#94A3B8' }}>
+                  Enterprise-grade security, tested architectures, and verified software products backed by transparent service guarantees.
                 </p>
               </div>
             </div>
 
             <div className="col-12 col-md-4">
-              <div className="card card-growvia h-100 p-4 p-lg-5 shadow-card-custom">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center mb-4 shadow-sm"
-                  style={{ width: '48px', height: '48px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
+                  className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3 shadow-sm"
+                  style={{ width: '44px', height: '44px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                 >
-                  <Target size={22} />
+                  <Target size={20} />
                 </div>
-                <h3 className="h5 fw-bold text-white mb-2">Sustainable Business Growth</h3>
-                <p className="text-secondary fs-7 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                  Scalable digital assets that grow with your company, empowering leadership to
-                  expand confidently across local and international markets.
+                <h3 className="h6 fw-bold text-white mb-2">Sustainable Growth</h3>
+                <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.82rem', lineHeight: '1.5', color: '#94A3B8' }}>
+                  Scalable digital assets designed to expand with your company across local and international markets.
                 </p>
               </div>
             </div>
@@ -107,28 +102,27 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 3: MAIN SERVICES */}
+      {/* SECTION 3: 6 CORE SERVICES */}
       <section className="py-5">
         <div className="container py-lg-4">
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3">
             <div>
-              <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-1" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
-                COMPREHENSIVE CAPABILITIES
+              <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.08em' }}>
+                CORE CAPABILITIES
               </span>
               <h2 className="display-6 fw-extrabold text-white mb-0">
-                Explore Our Digital Services
+                Digital Services
               </h2>
             </div>
-            <p className="text-secondary mb-0" style={{ maxWidth: '420px', fontSize: '0.875rem', color: '#94A3B8' }}>
-              From intelligent automation to custom software development, discover solutions
-              designed around your business goals.
+            <p className="text-secondary mb-0" style={{ maxWidth: '380px', fontSize: '0.85rem', color: '#94A3B8' }}>
+              Autonomous AI workflows, custom engineering, and scalable data intelligence built for modern enterprises.
             </p>
           </div>
 
-          {/* 8 Main Service Categories Grid */}
+          {/* 6 Main Services Grid (2x3 perfectly balanced) */}
           <div className="row g-4">
             {SERVICES_DATA.map((service, index) => (
-              <div key={service.id} className="col-12 col-md-6 col-lg-3">
+              <div key={service.id} className="col-12 col-md-6 col-lg-4">
                 <ServiceCard service={service} index={index} />
               </div>
             ))}
@@ -139,7 +133,7 @@ export const Home: React.FC = () => {
               to="/services"
               className="btn btn-forest d-inline-flex align-items-center gap-2"
             >
-              <span>View All 8 Service Disciplines & Deliverables</span>
+              <span>Explore All 6 Solutions</span>
               <ArrowRight size={15} />
             </Link>
           </div>
@@ -149,20 +143,19 @@ export const Home: React.FC = () => {
       {/* SECTION 4: FEATURED PRODUCTS */}
       <section className="py-5 bg-surface border-top border-bottom border-custom">
         <div className="container py-lg-4">
-          <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
-            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
-              ENTERPRISE & ACCELERATOR PLATFORMS
+          <div className="text-center mx-auto mb-5" style={{ maxWidth: '640px' }}>
+            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.08em' }}>
+              PLATFORMS & ACCELERATORS
             </span>
             <h2 className="display-6 fw-extrabold text-gradient-luxury mb-3">
-              Powerful Digital Products for Modern Businesses
+              Enterprise Digital Products
             </h2>
             <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
-              Discover ready-made, battle-tested software suites available through Mindora's
-              authorized reseller and technology partner arrangements with Klyssel Labs.
+              Ready-to-deploy software platforms delivered via our technology partnership with Klyssel Labs.
             </p>
           </div>
 
-          {/* Three Featured Products */}
+          {/* Featured Products Grid */}
           <div className="row g-4">
             {PRODUCTS_DATA.map((product, idx) => (
               <div key={product.id} className="col-12 col-lg-4">
@@ -176,16 +169,15 @@ export const Home: React.FC = () => {
       {/* SECTION 5: WHY CHOOSE MINDORA? */}
       <section className="py-5">
         <div className="container py-lg-4">
-          <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
-            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+          <div className="text-center mx-auto mb-5" style={{ maxWidth: '640px' }}>
+            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.08em' }}>
               THE MINDORA ADVANTAGE
             </span>
             <h2 className="display-6 fw-extrabold text-white mb-3">
-              Your Partner in Digital Transformation
+              Engineered for Precision & Impact
             </h2>
             <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
-              We focus on understanding your business challenges and connecting you with the right
-              digital solutions to achieve practical results.
+              Focused on delivering measurable commercial return through reliable, modern engineering.
             </p>
           </div>
 
@@ -194,15 +186,14 @@ export const Home: React.FC = () => {
             <div className="col-12 col-md-6 col-lg-4">
               <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                  className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '40px', height: '40px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                 >
-                  <Sliders size={22} />
+                  <Sliders size={20} />
                 </div>
-                <h3 className="h6 fw-bold text-white mb-2">Tailored Technology Solutions</h3>
+                <h3 className="h6 fw-bold text-white mb-2">Tailored Architectures</h3>
                 <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                  No rigid cookie-cutter templates. Every system is scoped and calibrated to solve
-                  your explicit commercial bottlenecks.
+                  No rigid templates. Every system is scoped and calibrated to resolve your specific commercial bottlenecks.
                 </p>
               </div>
             </div>
@@ -210,15 +201,14 @@ export const Home: React.FC = () => {
             <div className="col-12 col-md-6 col-lg-4">
               <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                  className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '40px', height: '40px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                 >
-                  <Sparkles size={22} />
+                  <Sparkles size={20} />
                 </div>
-                <h3 className="h6 fw-bold text-white mb-2">Access to Advanced Digital Products</h3>
+                <h3 className="h6 fw-bold text-white mb-2">Advanced AI Integrations</h3>
                 <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                  Immediate access to flagship platforms including Klyssel One ERP/CRM and Klyx
-                  Chatbot AI with authorized deployment support.
+                  Direct access to enterprise AI suites, including Klyx Chatbot AI and autonomous process agents.
                 </p>
               </div>
             </div>
@@ -226,15 +216,14 @@ export const Home: React.FC = () => {
             <div className="col-12 col-md-6 col-lg-4">
               <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                  className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '40px', height: '40px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                 >
-                  <Users size={22} />
+                  <Users size={20} />
                 </div>
-                <h3 className="h6 fw-bold text-white mb-2">Professional Technical Expertise</h3>
+                <h3 className="h6 fw-bold text-white mb-2">Technical Leadership</h3>
                 <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                  Seasoned solution architects and developers adhering to rigorous software
-                  engineering, security, and data protection standards.
+                  Experienced solution architects adhering to strict software security and international data governance.
                 </p>
               </div>
             </div>
@@ -242,15 +231,14 @@ export const Home: React.FC = () => {
             <div className="col-12 col-md-6 col-lg-4">
               <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                  className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '40px', height: '40px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                 >
-                  <Target size={22} />
+                  <Target size={20} />
                 </div>
-                <h3 className="h6 fw-bold text-white mb-2">Business-Focused Approach</h3>
+                <h3 className="h6 fw-bold text-white mb-2">Business-First Approach</h3>
                 <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                  We speak the language of commercial return, operational efficiency, and customer
-                  retention rather than superficial technology jargon.
+                  We focus on commercial return, operational velocity, and customer retention rather than buzzwords.
                 </p>
               </div>
             </div>
@@ -258,15 +246,14 @@ export const Home: React.FC = () => {
             <div className="col-12 col-md-6 col-lg-4">
               <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                  className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '40px', height: '40px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                 >
-                  <Compass size={22} />
+                  <Compass size={20} />
                 </div>
-                <h3 className="h6 fw-bold text-white mb-2">Flexible Engagement Models</h3>
+                <h3 className="h6 fw-bold text-white mb-2">Agile Engagements</h3>
                 <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                  From turnkey software product rollout to dedicated engineering squads and advisory
-                  retainers tailored to your stage of maturity.
+                  Flexible models ranging from turnkey product rollouts to dedicated engineering sprints and advisory.
                 </p>
               </div>
             </div>
@@ -274,15 +261,14 @@ export const Home: React.FC = () => {
             <div className="col-12 col-md-6 col-lg-4">
               <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                  className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '40px', height: '40px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                 >
-                  <Headphones size={22} />
+                  <Headphones size={20} />
                 </div>
-                <h3 className="h6 fw-bold text-white mb-2">Ongoing Client Support</h3>
+                <h3 className="h6 fw-bold text-white mb-2">Dedicated Support</h3>
                 <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                  Dedicated regional contact and continuous maintenance ensure your systems remain
-                  fast, secure, and aligned with market changes.
+                  Regional contact and continuous maintenance guarantee your systems remain fast, secure, and resilient.
                 </p>
               </div>
             </div>
@@ -295,16 +281,15 @@ export const Home: React.FC = () => {
         <div className="container py-lg-4">
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3">
             <div>
-              <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-1" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+              <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.08em' }}>
                 VERTICAL SPECIALIZATION
               </span>
               <h2 className="display-6 fw-extrabold text-white mb-0">
                 Industries We Serve
               </h2>
             </div>
-            <p className="text-secondary mb-0" style={{ maxWidth: '420px', fontSize: '0.875rem', color: '#94A3B8' }}>
-              Tailored digital solutions engineered for the specific commercial realities of
-              Mauritius, the Indian Ocean, and international markets.
+            <p className="text-secondary mb-0" style={{ maxWidth: '380px', fontSize: '0.85rem', color: '#94A3B8' }}>
+              Engineered for the commercial realities of Mauritius, the Indian Ocean, and global markets.
             </p>
           </div>
 
@@ -318,42 +303,40 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 7: HOW WE WORK */}
+      {/* SECTION 7: HOW WE WORK (MINIMALIST 4-STEP) */}
       <section className="py-5">
         <div className="container py-lg-4">
-          <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
-            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+          <div className="text-center mx-auto mb-5" style={{ maxWidth: '640px' }}>
+            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.08em' }}>
               STRUCTURED ENGAGEMENT
             </span>
             <h2 className="display-6 fw-extrabold text-gradient-luxury mb-3">
-              From Business Challenges to Digital Solutions
+              Delivery Methodology
             </h2>
             <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
-              Our transparent four-phase delivery methodology keeps your leadership in complete
-              control from initial requirements through ongoing operations.
+              Transparent four-phase execution keeping leadership in complete control.
             </p>
           </div>
 
-          {/* 4-Step Grid */}
+          {/* 4-Step Minimalist Grid */}
           <div className="row g-4">
             <div className="col-12 col-md-6 col-lg-3">
               <div className="card card-growvia h-100 p-4 shadow-card-custom d-flex flex-column justify-content-between">
                 <div>
-                  <span className="font-monospace fw-extrabold text-gradient-accent fs-3 d-block mb-2">01</span>
+                  <span className="font-monospace fw-extrabold text-gradient-accent fs-4 d-block mb-2">01</span>
                   <div
-                    className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                    style={{ width: '40px', height: '40px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                    className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                    style={{ width: '38px', height: '38px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                   >
-                    <Search size={20} />
+                    <Search size={18} />
                   </div>
                   <h3 className="h6 fw-bold text-white mb-2">Discover</h3>
                   <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                    Understand your business needs, goals, and challenges through an in-depth
-                    technical and operational consultation.
+                    Evaluate requirements, workflows, and commercial bottlenecks through structured technical discovery.
                   </p>
                 </div>
                 <div className="pt-3 mt-3 border-top border-custom text-sage fw-semibold fs-8" style={{ fontSize: '0.72rem' }}>
-                  Phase 1 • Requirements Scoping
+                  Phase 1 • Scoping
                 </div>
               </div>
             </div>
@@ -361,21 +344,20 @@ export const Home: React.FC = () => {
             <div className="col-12 col-md-6 col-lg-3">
               <div className="card card-growvia h-100 p-4 shadow-card-custom d-flex flex-column justify-content-between">
                 <div>
-                  <span className="font-monospace fw-extrabold text-gradient-accent fs-3 d-block mb-2">02</span>
+                  <span className="font-monospace fw-extrabold text-gradient-accent fs-4 d-block mb-2">02</span>
                   <div
-                    className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                    style={{ width: '40px', height: '40px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                    className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                    style={{ width: '38px', height: '38px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                   >
-                    <Workflow size={20} />
+                    <Workflow size={18} />
                   </div>
                   <h3 className="h6 fw-bold text-white mb-2">Recommend</h3>
                   <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                    Identify the most suitable digital services or products—comparing custom builds
-                    against proven ecosystem platforms like Klyssel One.
+                    Identify the optimal architectural roadmap, comparing bespoke builds against proven platforms.
                   </p>
                 </div>
                 <div className="pt-3 mt-3 border-top border-custom text-sage fw-semibold fs-8" style={{ fontSize: '0.72rem' }}>
-                  Phase 2 • Architecture & Proposal
+                  Phase 2 • Architecture
                 </div>
               </div>
             </div>
@@ -383,21 +365,20 @@ export const Home: React.FC = () => {
             <div className="col-12 col-md-6 col-lg-3">
               <div className="card card-growvia h-100 p-4 shadow-card-custom d-flex flex-column justify-content-between">
                 <div>
-                  <span className="font-monospace fw-extrabold text-gradient-accent fs-3 d-block mb-2">03</span>
+                  <span className="font-monospace fw-extrabold text-gradient-accent fs-4 d-block mb-2">03</span>
                   <div
-                    className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                    style={{ width: '40px', height: '40px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                    className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                    style={{ width: '38px', height: '38px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                   >
-                    <Sliders size={20} />
+                    <Sliders size={18} />
                   </div>
                   <h3 className="h6 fw-bold text-white mb-2">Implement</h3>
                   <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                    Coordinate the solution, setup, customization, and deployment with the relevant
-                    technology team and authorized specialists.
+                    Deploy, calibrate, and integrate the solution with authorized specialists and rigorous QA testing.
                   </p>
                 </div>
                 <div className="pt-3 mt-3 border-top border-custom text-sage fw-semibold fs-8" style={{ fontSize: '0.72rem' }}>
-                  Phase 3 • Deployment & QA
+                  Phase 3 • Deployment
                 </div>
               </div>
             </div>
@@ -405,21 +386,20 @@ export const Home: React.FC = () => {
             <div className="col-12 col-md-6 col-lg-3">
               <div className="card card-growvia h-100 p-4 shadow-card-custom d-flex flex-column justify-content-between">
                 <div>
-                  <span className="font-monospace fw-extrabold text-gradient-accent fs-3 d-block mb-2">04</span>
+                  <span className="font-monospace fw-extrabold text-gradient-accent fs-4 d-block mb-2">04</span>
                   <div
-                    className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
-                    style={{ width: '40px', height: '40px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
+                    className="rounded-3 bg-surface-solid text-sage d-flex align-items-center justify-content-center mb-3"
+                    style={{ width: '38px', height: '38px', border: '1px solid rgba(255, 255, 255, 0.08)' }}
                   >
-                    <LifeBuoy size={20} />
+                    <LifeBuoy size={18} />
                   </div>
                   <h3 className="h6 fw-bold text-white mb-2">Support</h3>
                   <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
-                    Provide client communication, assistance, and ongoing coordination according to the
-                    agreed service scope and SLA commitments.
+                    Continuous maintenance, system monitoring, and SLA-backed support to guarantee uninterrupted operation.
                   </p>
                 </div>
                 <div className="pt-3 mt-3 border-top border-custom text-sage fw-semibold fs-8" style={{ fontSize: '0.72rem' }}>
-                  Phase 4 • Long-Term Partnership
+                  Phase 4 • Long-Term SLA
                 </div>
               </div>
             </div>
@@ -432,8 +412,8 @@ export const Home: React.FC = () => {
 
       {/* SECTION 9: FINAL CTA */}
       <CTASection
-        headline="Let's Build Something That Moves Your Business Forward."
-        description="Tell us about your business goals. Our team will help you explore the right digital solutions."
+        headline="Ready to Elevate Your Digital Operations?"
+        description="Discuss your project with our solutions architects. Clear roadmaps, zero sales pressure."
       />
     </div>
   );

@@ -58,8 +58,6 @@ export const ContactForm: React.FC = () => {
         'mobile-development': 'Mobile App Development',
         'data-engineering': 'Custom Software',
         'digital-marketing': 'Digital Marketing',
-        'ui-ux-design': 'UI/UX Design',
-        'tech-consulting': 'Technology Consulting',
       };
       if (map[serviceParam]) {
         setFormData((prev) => ({ ...prev, serviceOrProduct: map[serviceParam] }));
@@ -419,8 +417,6 @@ Official Site: https://mindora.mu
               <option value="Mobile App Development">Mobile App Development</option>
               <option value="Data Analytics">Data Analytics & Business Intelligence</option>
               <option value="Digital Marketing">Digital Marketing & AI SEO</option>
-              <option value="UI/UX Design">UI/UX Design Services</option>
-              <option value="Technology Consulting">Technology Consulting</option>
             </optgroup>
             <optgroup label="Featured Digital Products">
               <option value="Klyssel One">Klyssel One (Flagship Enterprise)</option>
