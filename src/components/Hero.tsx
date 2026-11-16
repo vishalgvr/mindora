@@ -15,23 +15,23 @@ import {
 export const Hero: React.FC = () => {
   return (
     <section className="py-5 bg-mesh-pattern position-relative overflow-hidden">
-      <div className="container py-lg-4">
+      <div className="container py-lg-4 position-relative" style={{ zIndex: 1 }}>
         <div className="row align-items-center g-5">
           {/* Left Column: Headlines & CTA (7 cols) */}
           <div className="col-12 col-lg-7">
-            {/* Introductory Label */}
+            {/* Introductory Label with pulsing beacon */}
             <div className="badge-growvia mb-3 shadow-sm">
-              <span className="rounded-circle bg-forest d-inline-block" style={{ width: '6px', height: '6px' }} />
+              <span className="beacon-dot" />
               <span>DIGITAL SOLUTIONS FOR GROWING BUSINESSES</span>
             </div>
 
             {/* Main Headline */}
             <h1
-              className="display-4 fw-extrabold text-forest-dark mb-3 lh-sm"
+              className="display-4 fw-extrabold mb-3 lh-sm text-gradient-luxury"
               style={{ fontFamily: "'Outfit', 'Plus Jakarta Sans', sans-serif" }}
             >
               Smart Technology. <br />
-              <span className="text-forest position-relative d-inline-block">
+              <span className="text-gradient-accent position-relative d-inline-block">
                 Natural Growth.
                 <svg
                   className="position-absolute start-0 w-100"
@@ -51,9 +51,9 @@ export const Hero: React.FC = () => {
             </h1>
 
             {/* Supporting Description */}
-            <p className="fs-5 text-body-custom mb-4 pe-lg-4" style={{ lineHeight: '1.6', fontWeight: 400 }}>
+            <p className="fs-5 text-secondary mb-4 pe-lg-4" style={{ lineHeight: '1.6', fontWeight: 300, color: '#CBD5E1' }}>
               Empowering businesses with intelligent technology, innovative digital solutions, and
-              software designed to simplify operations and accelerate growth.
+              software designed to simplify operations and accelerate sustainable growth.
             </p>
 
             {/* Action Buttons */}
@@ -77,15 +77,15 @@ export const Hero: React.FC = () => {
             {/* Trust Reassurance Badges */}
             <div className="pt-4 border-top border-custom d-flex flex-wrap align-items-center gap-4 text-muted-custom fs-8" style={{ fontSize: '0.8rem' }}>
               <div className="d-flex align-items-center gap-2">
-                <ShieldCheck size={16} className="text-forest" />
+                <ShieldCheck size={16} className="text-sage" />
                 <span>Mauritius-Based Leadership</span>
               </div>
               <div className="d-flex align-items-center gap-2">
-                <Cpu size={16} className="text-forest" />
+                <Cpu size={16} className="text-sage" />
                 <span>Enterprise Technology Ecosystem</span>
               </div>
               <div className="d-flex align-items-center gap-2">
-                <CheckCircle size={16} className="text-forest" />
+                <CheckCircle size={16} className="text-sage" />
                 <span>Indian Ocean & Global Reach</span>
               </div>
             </div>
@@ -94,8 +94,8 @@ export const Hero: React.FC = () => {
           {/* Right Column: Visual Composition (5 cols) */}
           <div className="col-12 col-lg-5">
             <div className="position-relative mx-auto" style={{ maxWidth: '440px' }}>
-              {/* Main Card: Software Dashboard Mockup */}
-              <div className="card-growvia p-4 shadow-card-custom position-relative bg-surface">
+              {/* Main Card: Software Dashboard Mockup with Glassmorphism */}
+              <div className="card-growvia border-beam-card p-4 shadow-card-custom position-relative bg-surface">
                 {/* Simulated Header */}
                 <div className="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom border-custom">
                   <div className="d-flex align-items-center gap-2">
@@ -114,7 +114,7 @@ export const Hero: React.FC = () => {
                       </svg>
                     </div>
                     <div>
-                      <span className="fw-bold fs-7 text-forest-dark d-block lh-1" style={{ fontSize: '0.82rem' }}>
+                      <span className="fw-bold fs-7 text-white d-block lh-1" style={{ fontSize: '0.82rem' }}>
                         Mindora Digital Console
                       </span>
                       <span className="text-sage fs-8 fw-semibold" style={{ fontSize: '0.68rem' }}>
@@ -122,7 +122,8 @@ export const Hero: React.FC = () => {
                       </span>
                     </div>
                   </div>
-                  <span className="badge bg-success-subtle text-success fw-bold rounded-pill px-2.5 py-1" style={{ fontSize: '0.65rem' }}>
+                  <span className="badge-sage d-inline-flex align-items-center gap-1.5 py-1 px-2.5 rounded-pill" style={{ fontSize: '0.65rem' }}>
+                    <span className="beacon-dot" style={{ width: '5px', height: '5px' }} />
                     Live
                   </span>
                 </div>
@@ -130,13 +131,13 @@ export const Hero: React.FC = () => {
                 {/* Dashboard Metrics Row */}
                 <div className="row g-2 mb-3">
                   <div className="col-6">
-                    <div className="p-3 rounded-3 bg-cream-main border border-custom">
+                    <div className="p-3 rounded-3 bg-surface-solid border border-custom">
                       <span className="text-uppercase fw-bold text-muted-custom d-block mb-1" style={{ fontSize: '0.65rem' }}>
                         System Automation
                       </span>
                       <div className="d-flex align-items-baseline gap-1">
-                        <span className="fs-4 fw-extrabold text-forest-dark">94.8%</span>
-                        <span className="text-success fw-bold fs-8 d-flex align-items-center" style={{ fontSize: '0.7rem' }}>
+                        <span className="fs-4 fw-extrabold text-white">94.8%</span>
+                        <span className="text-sage fw-bold fs-8 d-flex align-items-center" style={{ fontSize: '0.7rem' }}>
                           <TrendingUp size={10} className="me-0.5" /> +18%
                         </span>
                       </div>
@@ -145,13 +146,13 @@ export const Hero: React.FC = () => {
                   </div>
 
                   <div className="col-6">
-                    <div className="p-3 rounded-3 bg-cream-main border border-custom">
+                    <div className="p-3 rounded-3 bg-surface-solid border border-custom">
                       <span className="text-uppercase fw-bold text-muted-custom d-block mb-1" style={{ fontSize: '0.65rem' }}>
                         Autonomous AI Desk
                       </span>
                       <div className="d-flex align-items-baseline gap-1">
-                        <span className="fs-4 fw-extrabold text-forest-dark">24 / 7</span>
-                        <span className="text-forest fw-bold fs-8" style={{ fontSize: '0.7rem' }}>0ms wait</span>
+                        <span className="fs-4 fw-extrabold text-gradient-accent">24 / 7</span>
+                        <span className="text-sage fw-bold fs-8" style={{ fontSize: '0.7rem' }}>0ms wait</span>
                       </div>
                       <span className="text-muted-custom fs-8 d-block" style={{ fontSize: '0.68rem' }}>Omnichannel response</span>
                     </div>
@@ -159,9 +160,9 @@ export const Hero: React.FC = () => {
                 </div>
 
                 {/* Simulated Chart Visual */}
-                <div className="p-3 rounded-3 bg-forest-dark text-cream-light mb-3">
+                <div className="p-3 rounded-3 bg-forest-dark text-cream-light mb-3 border border-custom">
                   <div className="d-flex align-items-center justify-content-between mb-2">
-                    <span className="fs-8 fw-semibold text-cream d-flex align-items-center gap-1" style={{ fontSize: '0.75rem' }}>
+                    <span className="fs-8 fw-semibold text-white d-flex align-items-center gap-1" style={{ fontSize: '0.75rem' }}>
                       <Activity size={13} className="text-sage" />
                       Client Operations Velocity
                     </span>
@@ -177,7 +178,7 @@ export const Hero: React.FC = () => {
                     <path
                       d="M0 55 C 40 50, 70 35, 110 40 C 150 45, 180 20, 220 25 C 260 30, 280 10, 300 8 L 300 70 L 0 70 Z"
                       fill="url(#hero-chart-grad)"
-                      opacity="0.3"
+                      opacity="0.35"
                     />
                     <defs>
                       <linearGradient id="hero-chart-grad" x1="0" y1="0" x2="0" y2="70" gradientUnits="userSpaceOnUse">
@@ -189,44 +190,44 @@ export const Hero: React.FC = () => {
                 </div>
 
                 {/* Ecosystem Notice Strip */}
-                <div className="p-2.5 rounded-3 bg-botanical-subtle d-flex align-items-center justify-content-between fs-8" style={{ fontSize: '0.75rem' }}>
+                <div className="p-2.5 rounded-3 bg-surface-solid border border-custom d-flex align-items-center justify-content-between fs-8" style={{ fontSize: '0.75rem' }}>
                   <div className="d-flex align-items-center gap-2">
-                    <Layers size={14} className="text-forest" />
-                    <span className="fw-semibold text-forest-dark">Klyssel One & Klyx v2.4 AI</span>
+                    <Layers size={14} className="text-sage" />
+                    <span className="fw-semibold text-white">Klyssel One & Klyx v2.4 AI</span>
                   </div>
-                  <span className="text-uppercase fw-bold text-forest" style={{ fontSize: '0.65rem' }}>
+                  <span className="text-uppercase fw-bold text-sage" style={{ fontSize: '0.65rem' }}>
                     Integrated
                   </span>
                 </div>
               </div>
 
-              {/* Floating Badge 1: AI Desk */}
+              {/* Floating Badge 1: AI Desk with Antigravity Levitation */}
               <div
-                className="position-absolute bg-surface p-2.5 rounded-4-custom shadow-hover-custom border border-custom d-flex align-items-center gap-2"
-                style={{ top: '-18px', left: '-18px', zIndex: 2 }}
+                className="position-absolute bg-surface p-2.5 rounded-4-custom shadow-hover-custom border border-custom d-flex align-items-center gap-2 animate-float-slow"
+                style={{ top: '-22px', left: '-22px', zIndex: 2 }}
               >
-                <div className="rounded-3 bg-forest text-cream p-2 d-flex align-items-center justify-content-center">
+                <div className="rounded-3 bg-forest text-cream p-2 d-flex align-items-center justify-content-center shadow-sm">
                   <Bot size={18} />
                 </div>
                 <div>
-                  <div className="d-flex align-items-center gap-1">
-                    <span className="fw-bold fs-8 text-forest-dark" style={{ fontSize: '0.75rem' }}>Klyx Chatbot AI</span>
-                    <span className="rounded-circle bg-success d-inline-block" style={{ width: '6px', height: '6px' }} />
+                  <div className="d-flex align-items-center gap-1.5">
+                    <span className="fw-bold fs-8 text-white" style={{ fontSize: '0.75rem' }}>Klyx Chatbot AI</span>
+                    <span className="beacon-dot" style={{ width: '5px', height: '5px' }} />
                   </div>
                   <span className="text-sage fw-semibold d-block" style={{ fontSize: '0.68rem' }}>Zero-hallucination agent</span>
                 </div>
               </div>
 
-              {/* Floating Badge 2: Practical Solutions */}
+              {/* Floating Badge 2: Practical Solutions with Counter Levitation */}
               <div
-                className="position-absolute bg-forest-dark text-cream-light p-2.5 rounded-4-custom shadow-hover-custom border border-sage-custom d-flex align-items-center gap-2"
-                style={{ bottom: '-18px', right: '-18px', zIndex: 2 }}
+                className="position-absolute bg-surface-solid text-white p-2.5 rounded-4-custom shadow-hover-custom border border-sage-custom d-flex align-items-center gap-2 animate-float-reverse"
+                style={{ bottom: '-22px', right: '-22px', zIndex: 2 }}
               >
-                <div className="rounded-3 bg-forest text-sage p-2 d-flex align-items-center justify-content-center">
+                <div className="rounded-3 bg-forest text-white p-2 d-flex align-items-center justify-content-center shadow-sm">
                   <Sparkles size={18} />
                 </div>
                 <div>
-                  <span className="fw-bold text-cream-light d-block" style={{ fontSize: '0.75rem' }}>Practical Solutions</span>
+                  <span className="fw-bold text-white d-block" style={{ fontSize: '0.75rem' }}>Practical Solutions</span>
                   <span className="text-sage fw-medium d-block" style={{ fontSize: '0.68rem' }}>Engineered for ROI</span>
                 </div>
               </div>

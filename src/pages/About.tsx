@@ -8,7 +8,7 @@ export const About: React.FC = () => {
   const { structure, values, location } = COMPANY_CONFIG;
 
   return (
-    <div className="w-100 bg-cream-main">
+    <div className="w-100">
       <SEO
         title="About Us | Leadership & Values — Mindora Mauritius"
         description="Mindora is an independent Mauritius-based digital solutions company governed by two directors, connecting businesses with modern software and Klyssel Labs technology ecosystem."
@@ -16,18 +16,18 @@ export const About: React.FC = () => {
       />
 
       {/* Hero / Overview Banner */}
-      <section className="py-5 bg-surface border-bottom border-custom text-center">
+      <section className="py-5 bg-surface border-bottom border-custom text-center position-relative">
         <div className="container py-lg-4" style={{ maxWidth: '780px' }}>
           <div className="badge-growvia mb-3">
-            <Sparkles size={13} className="text-forest" />
+            <Sparkles size={13} className="text-sage" />
             <span>OUR MISSION & FOUNDATION</span>
           </div>
 
-          <h1 className="display-6 fw-extrabold text-forest-dark mb-3">
+          <h1 className="display-6 fw-extrabold text-gradient-luxury mb-3">
             Growing Businesses Through Smarter Digital Solutions.
           </h1>
 
-          <p className="fs-6 text-body-custom text-opacity-85 mb-0" style={{ lineHeight: '1.6' }}>
+          <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
             Mindora is a Mauritius-based digital solutions company focused on connecting businesses
             with appropriate technology, custom software development, and modern digital services.
             We operate as an independent bridge between business vision and technical execution.
@@ -41,26 +41,26 @@ export const About: React.FC = () => {
           <div className="row g-5 align-items-center">
             {/* Left Column: Narrative */}
             <div className="col-12 col-lg-7">
-              <span className="text-uppercase text-forest fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+              <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
                 OUR APPROACH
               </span>
-              <h2 className="display-6 fw-extrabold text-forest-dark mb-3">
+              <h2 className="display-6 fw-extrabold text-white mb-3">
                 An Independent Digital Partner Grounded in Pragmatism.
               </h2>
-              <p className="fs-7 text-body-custom text-opacity-85 mb-3" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+              <p className="fs-7 text-secondary mb-3" style={{ fontSize: '0.9rem', lineHeight: '1.6', color: '#CBD5E1' }}>
                 Too many organizations invest in software tools that end up underutilized, overly
                 complex, or detached from actual commercial workflows. Mindora was established to
                 solve this dilemma.
               </p>
-              <p className="fs-7 text-body-custom text-opacity-85 mb-4" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+              <p className="fs-7 text-secondary mb-4" style={{ fontSize: '0.9rem', lineHeight: '1.6', color: '#CBD5E1' }}>
                 Based strategically in Mauritius—the premier financial and technological gateway
                 connecting Africa, India, and the Indian Ocean—Mindora partners with enterprises,
                 SMEs, and regional resorts to modernize their operations systematically.
               </p>
 
-              <div className="p-3 rounded-4-custom bg-surface border border-custom fs-8 text-body-custom text-opacity-80" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-                <div className="d-flex align-items-center gap-2 fw-bold text-forest-dark mb-1">
-                  <ShieldCheck size={16} className="text-forest" />
+              <div className="p-3 rounded-4-custom bg-surface-solid border border-custom fs-8 text-secondary" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
+                <div className="d-flex align-items-center gap-2 fw-bold text-white mb-1">
+                  <ShieldCheck size={16} className="text-sage" />
                   <span>Corporate Governance & Structure</span>
                 </div>
                 <p className="mb-0 text-muted-custom">
@@ -73,39 +73,39 @@ export const About: React.FC = () => {
 
             {/* Right Column: Fact Sheet */}
             <div className="col-12 col-lg-5">
-              <div className="card-growvia p-4 p-lg-5 shadow-card-custom">
-                <h3 className="text-uppercase fw-bold text-forest-dark fs-8 pb-3 border-bottom border-custom mb-3" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+              <div className="card-growvia border-beam-card p-4 p-lg-5 shadow-card-custom">
+                <h3 className="text-uppercase fw-bold text-white fs-8 pb-3 border-bottom border-custom mb-3" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
                   Company At A Glance
                 </h3>
 
                 <ul className="list-unstyled d-flex flex-column gap-3 mb-0 fs-8" style={{ fontSize: '0.82rem' }}>
                   <li className="d-flex justify-content-between pb-2 border-bottom border-custom">
                     <span className="text-muted-custom">Brand Name</span>
-                    <span className="fw-bold text-forest-dark">Mindora Digital Solutions</span>
+                    <span className="fw-bold text-white">Mindora Digital Solutions</span>
                   </li>
                   <li className="d-flex justify-content-between pb-2 border-bottom border-custom">
                     <span className="text-muted-custom">Corporate Type</span>
-                    <span className="fw-bold text-forest-dark">{structure.type}</span>
+                    <span className="fw-bold text-white">{structure.type}</span>
                   </li>
                   <li className="d-flex justify-content-between pb-2 border-bottom border-custom">
                     <span className="text-muted-custom">Governance</span>
-                    <span className="fw-bold text-forest-dark">{structure.directorsCount} Executive Directors</span>
+                    <span className="fw-bold text-white">{structure.directorsCount} Executive Directors</span>
                   </li>
                   <li className="d-flex justify-content-between pb-2 border-bottom border-custom">
                     <span className="text-muted-custom">Headquarters</span>
-                    <span className="fw-bold text-forest-dark">{location.country} ({location.region})</span>
+                    <span className="fw-bold text-white">{location.country} ({location.region})</span>
                   </li>
                   <li className="d-flex justify-content-between pb-2 border-bottom border-custom">
                     <span className="text-muted-custom">Technology Partner</span>
-                    <span className="fw-bold text-forest-dark">Klyssel Labs</span>
+                    <span className="fw-bold text-white">Klyssel Labs</span>
                   </li>
                   <li className="d-flex justify-content-between">
                     <span className="text-muted-custom">Delivery Framework</span>
-                    <span className="fw-bold text-forest-dark">Agile & SLA-Backed</span>
+                    <span className="fw-bold text-white">Agile & SLA-Backed</span>
                   </li>
                 </ul>
 
-                <div className="mt-4 pt-3 border-top border-custom d-flex align-items-center gap-2 text-forest fw-semibold fs-8" style={{ fontSize: '0.72rem' }}>
+                <div className="mt-4 pt-3 border-top border-custom d-flex align-items-center gap-2 text-sage fw-semibold fs-8" style={{ fontSize: '0.72rem' }}>
                   <Building size={14} />
                   <span>Registered Office placeholder: Ebène / Port Louis</span>
                 </div>
@@ -122,40 +122,40 @@ export const About: React.FC = () => {
             <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
               EXECUTIVE GOVERNANCE
             </span>
-            <h2 className="display-6 fw-extrabold text-forest-dark mb-3">
+            <h2 className="display-6 fw-extrabold text-white mb-3">
               Company Leadership
             </h2>
-            <p className="fs-6 text-body-custom text-opacity-85 mb-0" style={{ lineHeight: '1.6' }}>
+            <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
               Mindora operates under the governance of two directors overseeing client technology
               consultation, partnership management, and operational service delivery.
             </p>
           </div>
 
-          {/* Two Director Profile Cards (No invented names, photos, or false qualifications) */}
+          {/* Two Director Profile Cards */}
           <div className="row g-4 justify-content-center mx-auto" style={{ maxWidth: '860px' }}>
             {structure.directors.map((director) => (
               <div key={director.id} className="col-12 col-md-6">
-                <div className="card-growvia p-4 bg-cream-main shadow-soft-custom h-100 d-flex flex-column justify-content-between">
+                <div className="card-growvia p-4 shadow-card-custom h-100 d-flex flex-column justify-content-between">
                   <div>
                     <div className="d-flex align-items-center gap-3 mb-3">
                       <div
-                        className="rounded-3 bg-forest text-cream d-flex align-items-center justify-content-center shadow-sm"
-                        style={{ width: '50px', height: '50px' }}
+                        className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center shadow-sm"
+                        style={{ width: '50px', height: '50px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
                       >
                         <UserCheck size={26} />
                       </div>
                       <div>
-                        <span className="font-monospace fw-bold text-forest text-uppercase fs-8 d-block" style={{ fontSize: '0.72rem' }}>
+                        <span className="font-monospace fw-bold text-sage text-uppercase fs-8 d-block" style={{ fontSize: '0.72rem' }}>
                           {director.role}
                         </span>
-                        <h3 className="h6 fw-bold text-forest-dark mb-0">
+                        <h3 className="h6 fw-bold text-white mb-0">
                           [Director Profile Placeholder]
                         </h3>
                         <p className="text-muted-custom fs-8 mb-0" style={{ fontSize: '0.75rem' }}>{director.title}</p>
                       </div>
                     </div>
 
-                    <p className="p-3 rounded-3 bg-surface border border-custom fs-8 text-body-custom text-opacity-85 mb-3" style={{ fontSize: '0.78rem', lineHeight: '1.4' }}>
+                    <p className="p-3 rounded-3 bg-surface-solid border border-custom fs-8 text-secondary mb-3" style={{ fontSize: '0.78rem', lineHeight: '1.4', color: '#CBD5E1' }}>
                       {director.bioPlaceholder}
                     </p>
 
@@ -177,7 +177,7 @@ export const About: React.FC = () => {
                   </div>
 
                   <div className="pt-3 border-top border-custom text-muted-custom fs-8 fst-italic d-flex align-items-center gap-1 mt-3" style={{ fontSize: '0.7rem' }}>
-                    <Lock size={12} className="text-forest" />
+                    <Lock size={12} className="text-sage" />
                     <span>Official director names and bios updated upon formal corporate gazetting.</span>
                   </div>
                 </div>
@@ -188,16 +188,16 @@ export const About: React.FC = () => {
       </section>
 
       {/* CORE COMPANY VALUES */}
-      <section className="py-5 bg-cream-main">
+      <section className="py-5">
         <div className="container py-lg-4">
           <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
-            <span className="text-uppercase text-forest fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
               WHAT GUIDES US
             </span>
-            <h2 className="display-6 fw-extrabold text-forest-dark mb-3">
+            <h2 className="display-6 fw-extrabold text-white mb-3">
               Our Core Values
             </h2>
-            <p className="fs-6 text-body-custom text-opacity-85 mb-0" style={{ lineHeight: '1.6' }}>
+            <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
               Principles embedded into every consultation, software architecture, and partnership we
               undertake.
             </p>
@@ -206,15 +206,15 @@ export const About: React.FC = () => {
           <div className="row g-4">
             {values.map((val) => (
               <div key={val.title} className="col-12 col-md-6 col-lg-4">
-                <div className="card card-growvia h-100 p-4 shadow-soft-custom">
+                <div className="card card-growvia h-100 p-4 shadow-card-custom">
                   <div
-                    className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                    style={{ width: '40px', height: '40px' }}
+                    className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                    style={{ width: '40px', height: '40px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                   >
                     <CheckCircle2 size={20} />
                   </div>
-                  <h3 className="h6 fw-bold text-forest-dark mb-2">{val.title}</h3>
-                  <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                  <h3 className="h6 fw-bold text-white mb-2">{val.title}</h3>
+                  <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                     {val.description}
                   </p>
                 </div>

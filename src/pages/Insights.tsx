@@ -26,7 +26,7 @@ export const Insights: React.FC = () => {
   };
 
   return (
-    <div className="w-100 bg-cream-main">
+    <div className="w-100">
       <SEO
         title="Technology Insights & Strategy | Mindora Mauritius"
         description="Authoritative articles on AI automation, SaaS vs custom software architecture, and digital transformation for businesses in Mauritius and the Indian Ocean."
@@ -34,18 +34,18 @@ export const Insights: React.FC = () => {
       />
 
       {/* Header Banner */}
-      <section className="py-5 bg-surface border-bottom border-custom text-center">
+      <section className="py-5 bg-surface border-bottom border-custom text-center position-relative">
         <div className="container py-lg-4" style={{ maxWidth: '780px' }}>
           <div className="badge-growvia mb-3">
-            <BookOpen size={13} className="text-forest" />
+            <BookOpen size={13} className="text-sage" />
             <span>KNOWLEDGE & EDITORIAL INSIGHTS</span>
           </div>
 
-          <h1 className="display-6 fw-extrabold text-forest-dark mb-3">
+          <h1 className="display-6 fw-extrabold text-gradient-luxury mb-3">
             Insights on AI, Software & Automation.
           </h1>
 
-          <p className="fs-6 text-body-custom text-opacity-85 mb-0" style={{ lineHeight: '1.6' }}>
+          <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
             Practical analyses written by our technical consultants to help executives navigate
             digital transformation with clarity and measurable ROI.
           </p>
@@ -63,7 +63,7 @@ export const Insights: React.FC = () => {
                   <article
                     key={post.id}
                     id={post.slug}
-                    className="card-growvia p-4 p-md-5 shadow-soft-custom"
+                    className="card-growvia border-beam-card p-4 p-md-5 shadow-card-custom"
                   >
                     <div className="d-flex flex-wrap align-items-center gap-3 fs-8 text-muted-custom mb-3" style={{ fontSize: '0.75rem' }}>
                       <span className="badge-growvia">
@@ -79,11 +79,11 @@ export const Insights: React.FC = () => {
                       </span>
                     </div>
 
-                    <h2 className="h4 fw-bold text-forest-dark mb-3" style={{ lineHeight: '1.4' }}>
+                    <h2 className="h4 fw-bold text-white mb-3" style={{ lineHeight: '1.4' }}>
                       {post.title}
                     </h2>
 
-                    <p className="fs-7 text-body-custom text-opacity-85 mb-4" style={{ fontSize: '0.875rem', lineHeight: '1.6' }}>
+                    <p className="fs-7 text-secondary mb-4" style={{ fontSize: '0.875rem', lineHeight: '1.6', color: '#CBD5E1' }}>
                       {post.excerpt}
                     </p>
 
@@ -100,7 +100,7 @@ export const Insights: React.FC = () => {
                         <Tag size={12} className="text-sage" />
                         <div className="d-flex flex-wrap gap-1">
                           {post.tags.map((t, idx) => (
-                            <span key={idx} className="px-2 py-0.5 rounded-2 bg-cream-main border border-custom text-muted-custom">
+                            <span key={idx} className="px-2 py-0.5 rounded-2 bg-surface-solid border border-custom text-sage">
                               #{t}
                             </span>
                           ))}
@@ -118,14 +118,14 @@ export const Insights: React.FC = () => {
             <div className="col-12 col-lg-4">
               <div className="d-flex flex-column gap-4">
                 {/* Newsletter Box */}
-                <div className="card-growvia p-4 shadow-card-custom">
+                <div className="card-growvia border-beam-card p-4 shadow-card-custom">
                   <div
-                    className="rounded-3 bg-forest text-cream d-flex align-items-center justify-content-center p-2 mb-3 shadow-sm"
-                    style={{ width: '42px', height: '42px' }}
+                    className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center p-2 mb-3 shadow-sm"
+                    style={{ width: '42px', height: '42px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
                   >
                     <Mail size={20} />
                   </div>
-                  <h3 className="h6 fw-bold text-forest-dark mb-2">Technology Executive Briefing</h3>
+                  <h3 className="h6 fw-bold text-white mb-2">Technology Executive Briefing</h3>
                   <p className="text-muted-custom fs-8 mb-3" style={{ fontSize: '0.78rem', lineHeight: '1.5' }}>
                     Join Mauritius and regional business leaders receiving our monthly briefing on
                     practical AI use cases and software strategies.
@@ -158,14 +158,14 @@ export const Insights: React.FC = () => {
                 </div>
 
                 {/* Consultation Callout */}
-                <div className="p-4 rounded-4-custom bg-forest-dark text-cream-light border border-secondary border-opacity-25 shadow-card-custom">
+                <div className="p-4 rounded-4-custom bg-surface-solid border border-custom shadow-card-custom">
                   <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.68rem', letterSpacing: '0.06em' }}>
                     Have an implementation question?
                   </span>
-                  <h3 className="h5 fw-bold text-cream-light mb-2">
+                  <h3 className="h5 fw-bold text-white mb-2">
                     Apply these blueprints to your enterprise.
                   </h3>
-                  <p className="text-light text-opacity-80 fs-8 mb-3" style={{ fontSize: '0.78rem', lineHeight: '1.5' }}>
+                  <p className="text-secondary fs-8 mb-3" style={{ fontSize: '0.78rem', lineHeight: '1.5', color: '#CBD5E1' }}>
                     Consult directly with our Mauritius solutions directors to evaluate feasibility.
                   </p>
                   <Link

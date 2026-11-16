@@ -10,19 +10,28 @@ export const Footer: React.FC = () => {
   const { contact, partner, structure, location } = COMPANY_CONFIG;
 
   return (
-    <footer className="bg-forest-dark text-cream-light pt-5 pb-4 mt-auto">
+    <footer className="bg-forest-dark text-cream-light pt-5 pb-4 mt-auto position-relative border-top border-custom">
+      {/* Antigravity Glow Top Beam */}
+      <div
+        className="position-absolute top-0 start-0 w-100"
+        style={{
+          height: '1px',
+          background: 'linear-gradient(90deg, transparent, rgba(133, 55, 252, 0.6), rgba(56, 189, 248, 0.6), transparent)',
+        }}
+      />
+
       <div className="container">
         {/* Main Columns Grid */}
-        <div className="row g-4 pb-5 border-bottom border-secondary border-opacity-25">
+        <div className="row g-4 pb-5 border-bottom border-custom">
           {/* Column 1: Brand & Positioning */}
           <div className="col-12 col-lg-5 pe-lg-4">
             <Logo variant="full" theme="light" iconSize={38} className="mb-3" />
-            <p className="text-light text-opacity-75 fs-7 mb-4" style={{ maxWidth: '380px', lineHeight: '1.6', fontSize: '0.85rem' }}>
+            <p className="text-secondary fs-7 mb-4" style={{ maxWidth: '380px', lineHeight: '1.6', fontSize: '0.85rem', color: '#94A3B8' }}>
               Empowering businesses in Mauritius and international markets with smart technology,
               intelligent AI automation, custom software, and robust enterprise digital products.
             </p>
 
-            <div className="d-flex flex-column gap-2 text-light text-opacity-75 fs-8 mb-4" style={{ fontSize: '0.78rem' }}>
+            <div className="d-flex flex-column gap-2 text-secondary fs-8 mb-4" style={{ fontSize: '0.78rem', color: '#CBD5E1' }}>
               <div className="d-flex align-items-center gap-2">
                 <MapPin size={15} className="text-sage flex-shrink-0" />
                 <span>Location: {location.country} ({location.region})</span>
@@ -35,7 +44,7 @@ export const Footer: React.FC = () => {
                 <Mail size={15} className="text-sage flex-shrink-0" />
                 <a
                   href={`mailto:${contact.email}`}
-                  className="text-cream text-decoration-none text-opacity-80"
+                  className="text-white text-decoration-none"
                 >
                   {contact.email}
                 </a>
@@ -46,7 +55,7 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-forest border border-sage-custom fs-8" style={{ fontSize: '0.72rem' }}>
+            <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-surface-solid border border-sage-custom fs-8" style={{ fontSize: '0.72rem' }}>
               <CheckCircle2 size={13} className="text-sage" />
               <span className="text-sage">Independent Brand • Mauritius Registered</span>
             </div>
@@ -62,7 +71,8 @@ export const Footer: React.FC = () => {
                 <li key={service.id}>
                   <Link
                     to={`/services#${service.id}`}
-                    className="text-light text-opacity-75 text-decoration-none"
+                    className="text-secondary text-decoration-none transition-all hover:text-white"
+                    style={{ color: '#94A3B8' }}
                   >
                     {service.title}
                   </Link>
@@ -86,7 +96,8 @@ export const Footer: React.FC = () => {
                 <li key={product.id}>
                   <Link
                     to={`/products#${product.id}`}
-                    className="text-light text-opacity-75 text-decoration-none"
+                    className="text-secondary text-decoration-none"
+                    style={{ color: '#94A3B8' }}
                   >
                     {product.name}
                   </Link>
@@ -98,9 +109,9 @@ export const Footer: React.FC = () => {
               Industries
             </h6>
             <ul className="list-unstyled d-flex flex-column gap-1 fs-8 mb-0" style={{ fontSize: '0.75rem' }}>
-              <li><Link to="/industries" className="text-light text-opacity-75 text-decoration-none">Hospitality & Tourism</Link></li>
-              <li><Link to="/industries" className="text-light text-opacity-75 text-decoration-none">Healthcare & Retail</Link></li>
-              <li><Link to="/industries" className="text-light text-opacity-75 text-decoration-none">Finance & Startups</Link></li>
+              <li><Link to="/industries" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Hospitality & Tourism</Link></li>
+              <li><Link to="/industries" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Healthcare & Retail</Link></li>
+              <li><Link to="/industries" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Finance & Startups</Link></li>
             </ul>
           </div>
 
@@ -110,16 +121,16 @@ export const Footer: React.FC = () => {
               Company
             </h6>
             <ul className="list-unstyled d-flex flex-column gap-2 fs-8 mb-4" style={{ fontSize: '0.78rem' }}>
-              <li><Link to="/about" className="text-light text-opacity-75 text-decoration-none">About Mindora</Link></li>
-              <li><Link to="/about#directors" className="text-light text-opacity-75 text-decoration-none">Leadership Structure</Link></li>
-              <li><Link to="/insights" className="text-light text-opacity-75 text-decoration-none">Technology Insights</Link></li>
-              <li><Link to="/contact" className="text-light text-opacity-75 text-decoration-none">Get a Consultation</Link></li>
-              <li><Link to="/privacy" className="text-light text-opacity-75 text-decoration-none">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-light text-opacity-75 text-decoration-none">Terms & Conditions</Link></li>
+              <li><Link to="/about" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>About Mindora</Link></li>
+              <li><Link to="/about#directors" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Leadership Structure</Link></li>
+              <li><Link to="/insights" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Technology Insights</Link></li>
+              <li><Link to="/contact" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Get a Consultation</Link></li>
+              <li><Link to="/privacy" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Privacy Policy</Link></li>
+              <li><Link to="/terms" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Terms & Conditions</Link></li>
             </ul>
 
             {/* Technology Partner Notice */}
-            <div className="pt-3 border-top border-secondary border-opacity-25">
+            <div className="pt-3 border-top border-custom">
               <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-1" style={{ fontSize: '0.68rem', letterSpacing: '0.06em' }}>
                 Technology Partner
               </span>
@@ -127,7 +138,7 @@ export const Footer: React.FC = () => {
                 href={partner.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-light text-opacity-90 text-decoration-none fs-8 d-inline-flex align-items-center gap-1"
+                className="text-white text-decoration-none fs-8 d-inline-flex align-items-center gap-1"
                 style={{ fontSize: '0.8rem' }}
               >
                 <span>{partner.name}</span>
@@ -138,20 +149,20 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Partnership & Resale Disclosure */}
-        <div className="py-4 border-bottom border-secondary border-opacity-25">
-          <p className="mb-0 text-light text-opacity-50 fs-8" style={{ fontSize: '0.72rem', lineHeight: '1.5' }}>
+        <div className="py-4 border-bottom border-custom">
+          <p className="mb-0 text-secondary fs-8" style={{ fontSize: '0.72rem', lineHeight: '1.5', color: '#64748B' }}>
             <strong className="text-sage fw-semibold">Technology Ecosystem Notice: </strong>
             {partner.relationshipDisclaimer}
           </p>
         </div>
 
         {/* Bottom Copyright Row */}
-        <div className="pt-3 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2 fs-8 text-light text-opacity-60" style={{ fontSize: '0.75rem' }}>
+        <div className="pt-3 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2 fs-8 text-secondary" style={{ fontSize: '0.75rem', color: '#94A3B8' }}>
           <p className="mb-0">© 2026 Mindora Digital Solutions. All Rights Reserved. Mauritius.</p>
           <div className="d-flex align-items-center gap-3">
-            <Link to="/privacy" className="text-light text-opacity-60 text-decoration-none">Privacy Policy</Link>
-            <Link to="/terms" className="text-light text-opacity-60 text-decoration-none">Terms of Service</Link>
-            <Link to="/contact" className="text-light text-opacity-60 text-decoration-none">Request a Quote</Link>
+            <Link to="/privacy" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Privacy Policy</Link>
+            <Link to="/terms" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Terms of Service</Link>
+            <Link to="/contact" className="text-secondary text-decoration-none" style={{ color: '#94A3B8' }}>Request a Quote</Link>
           </div>
         </div>
       </div>

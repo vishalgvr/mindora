@@ -19,7 +19,7 @@ export const Contact: React.FC = () => {
   )}`;
 
   return (
-    <div className="w-100 bg-cream-main">
+    <div className="w-100">
       <SEO
         title="Contact Us & Request a Quote | Mindora Mauritius"
         description="Tell us what your business needs. Contact Mindora Digital Solutions in Mauritius for custom software, AI automation, and enterprise product consultations."
@@ -27,18 +27,18 @@ export const Contact: React.FC = () => {
       />
 
       {/* Header Banner */}
-      <section className="py-5 bg-surface border-bottom border-custom text-center">
+      <section className="py-5 bg-surface border-bottom border-custom text-center position-relative">
         <div className="container py-lg-4" style={{ maxWidth: '780px' }}>
           <div className="badge-growvia mb-3">
-            <Sparkles size={13} className="text-forest" />
+            <Sparkles size={13} className="text-sage" />
             <span>DIRECT CLIENT CONSULTATION</span>
           </div>
 
-          <h1 className="display-6 fw-extrabold text-forest-dark mb-3">
+          <h1 className="display-6 fw-extrabold text-gradient-luxury mb-3">
             Tell Us What Your Business Needs.
           </h1>
 
-          <p className="fs-6 text-body-custom text-opacity-85 mb-0" style={{ lineHeight: '1.6' }}>
+          <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
             Have a project in mind? Looking for the right digital product? Let's discuss how Mindora
             can help move your business forward.
           </p>
@@ -55,30 +55,30 @@ export const Contact: React.FC = () => {
                 <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-1" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
                   COMMUNICATION DESK
                 </span>
-                <h2 className="h4 fw-bold text-forest-dark mb-2">
+                <h2 className="h4 fw-bold text-white mb-2">
                   Direct Access to Solutions Leadership
                 </h2>
-                <p className="fs-7 text-body-custom text-opacity-80 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5' }}>
+                <p className="fs-7 text-secondary mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   Every enquiry submitted to Mindora is evaluated by our technology directors. We
                   respect your time and provide straightforward technical and commercial guidance.
                 </p>
               </div>
 
               {/* Contact Information Card */}
-              <div className="card-growvia p-4 shadow-card-custom mb-4">
-                <h3 className="text-uppercase fw-bold text-forest-dark fs-8 pb-2 border-bottom border-custom mb-3" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+              <div className="card-growvia border-beam-card p-4 shadow-card-custom mb-4">
+                <h3 className="text-uppercase fw-bold text-white fs-8 pb-2 border-bottom border-custom mb-3" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
                   Official Contact Channels
                 </h3>
 
                 <div className="d-flex flex-column gap-3 fs-8" style={{ fontSize: '0.8rem' }}>
                   {/* Email */}
                   <div className="d-flex align-items-start gap-2.5">
-                    <div className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px' }}>
+                    <div className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px', border: '1px solid rgba(56, 189, 248, 0.3)' }}>
                       <Mail size={16} />
                     </div>
                     <div>
                       <span className="text-sage fw-bold d-block" style={{ fontSize: '0.72rem' }}>Corporate Email</span>
-                      <a href={`mailto:${contact.email}`} className="text-forest-dark fw-bold text-decoration-underline">
+                      <a href={`mailto:${contact.email}`} className="text-white fw-bold text-decoration-underline">
                         {contact.email}
                       </a>
                     </div>
@@ -86,18 +86,18 @@ export const Contact: React.FC = () => {
 
                   {/* Phone */}
                   <div className="d-flex align-items-start gap-2.5">
-                    <div className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px' }}>
+                    <div className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px', border: '1px solid rgba(56, 189, 248, 0.3)' }}>
                       <Phone size={16} />
                     </div>
                     <div>
                       <span className="text-sage fw-bold d-block" style={{ fontSize: '0.72rem' }}>Direct Line</span>
-                      <span className="text-forest-dark fw-bold">{contact.phone}</span>
+                      <span className="text-white fw-bold">{contact.phone}</span>
                     </div>
                   </div>
 
                   {/* WhatsApp */}
                   <div className="d-flex align-items-start gap-2.5">
-                    <div className="rounded-3 bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px' }}>
+                    <div className="rounded-3 bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px', border: '1px solid rgba(37, 211, 102, 0.4)' }}>
                       <MessageCircle size={16} />
                     </div>
                     <div>
@@ -110,12 +110,12 @@ export const Contact: React.FC = () => {
 
                   {/* Location */}
                   <div className="d-flex align-items-start gap-2.5">
-                    <div className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px' }}>
+                    <div className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px', border: '1px solid rgba(56, 189, 248, 0.3)' }}>
                       <MapPin size={16} />
                     </div>
                     <div>
                       <span className="text-sage fw-bold d-block" style={{ fontSize: '0.72rem' }}>Location</span>
-                      <span className="text-forest-dark fw-bold">{location.country}</span>
+                      <span className="text-white fw-bold">{location.country}</span>
                       <span className="text-muted-custom d-block mt-0.5 fs-8" style={{ fontSize: '0.72rem' }}>
                         {location.registeredOfficePlaceholder}
                       </span>
@@ -124,21 +124,21 @@ export const Contact: React.FC = () => {
 
                   {/* Hours */}
                   <div className="d-flex align-items-start gap-2.5">
-                    <div className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px' }}>
+                    <div className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center p-2 flex-shrink-0" style={{ width: '36px', height: '36px', border: '1px solid rgba(56, 189, 248, 0.3)' }}>
                       <Clock size={16} />
                     </div>
                     <div>
                       <span className="text-sage fw-bold d-block" style={{ fontSize: '0.72rem' }}>Consultation Hours</span>
-                      <span className="text-body-custom">{contact.consultationHours}</span>
+                      <span className="text-secondary" style={{ color: '#CBD5E1' }}>{contact.consultationHours}</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Reassurance */}
-              <div className="p-3.5 rounded-4-custom bg-surface border border-custom fs-8 text-body-custom text-opacity-80" style={{ fontSize: '0.78rem', lineHeight: '1.5' }}>
-                <div className="d-flex align-items-center gap-1.5 fw-bold text-forest-dark mb-1">
-                  <ShieldCheck size={15} className="text-forest" />
+              <div className="p-3.5 rounded-4-custom bg-surface-solid border border-custom fs-8 text-secondary" style={{ fontSize: '0.78rem', lineHeight: '1.5', color: '#94A3B8' }}>
+                <div className="d-flex align-items-center gap-1.5 fw-bold text-white mb-1">
+                  <ShieldCheck size={15} className="text-sage" />
                   <span>Our Consultation Commitment</span>
                 </div>
                 <ul className="list-unstyled d-flex flex-column gap-1 text-muted-custom mb-0 fs-8" style={{ fontSize: '0.75rem' }}>

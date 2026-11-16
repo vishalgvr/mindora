@@ -170,32 +170,32 @@ Official Site: https://mindora.mu
   // SUCCESS VIEW
   if (submissionResponse) {
     return (
-      <div className="card-growvia p-4 p-md-5 shadow-hover-custom mx-auto" style={{ maxWidth: '640px' }}>
+      <div className="card-growvia border-beam-card p-4 p-md-5 shadow-hover-custom mx-auto" style={{ maxWidth: '640px' }}>
         <div
-          className="rounded-4-custom bg-success-subtle text-forest d-flex align-items-center justify-content-center mx-auto mb-4"
-          style={{ width: '64px', height: '64px' }}
+          className="rounded-4-custom bg-forest text-white d-flex align-items-center justify-content-center mx-auto mb-4"
+          style={{ width: '64px', height: '64px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
         >
           <CheckCircle2 size={36} />
         </div>
 
-        <h3 className="h3 fw-extrabold text-forest-dark text-center mb-2">
+        <h3 className="h3 fw-extrabold text-white text-center mb-2">
           Quotation Enquiry Received
         </h3>
 
-        <p className="fs-7 text-body-custom text-center mb-4" style={{ fontSize: '0.875rem', lineHeight: '1.6' }}>
-          Thank you, <strong className="text-forest-dark">{formData.fullName}</strong>. Your enquiry
+        <p className="fs-7 text-secondary text-center mb-4" style={{ fontSize: '0.875rem', lineHeight: '1.6', color: '#CBD5E1' }}>
+          Thank you, <strong className="text-white">{formData.fullName}</strong>. Your enquiry
           has been generated and recorded. Our Mauritius solutions directors will review your
           scope and prepare your customized proposal.
         </p>
 
         {/* Reference Code Box */}
-        <div className="p-4 rounded-4-custom bg-cream-main border border-custom mb-4">
+        <div className="p-4 rounded-4-custom bg-surface-solid border border-custom mb-4">
           <div className="d-flex justify-content-between text-muted-custom fs-8 fw-semibold text-uppercase mb-1" style={{ fontSize: '0.72rem' }}>
             <span>Enquiry Reference Code</span>
-            <span>Mauritius Lead Desk</span>
+            <span className="text-sage">Mauritius Lead Desk</span>
           </div>
           <div className="d-flex align-items-center justify-content-between">
-            <span className="h4 fw-extrabold text-forest-dark font-monospace mb-0">
+            <span className="h4 fw-extrabold text-white font-monospace mb-0">
               {submissionResponse.reference_id}
             </span>
             <div className="d-flex gap-2">
@@ -253,20 +253,20 @@ Official Site: https://mindora.mu
         </div>
 
         {/* Next Steps */}
-        <div className="mb-4 fs-8 text-body-custom pt-3 border-top border-custom" style={{ fontSize: '0.8rem' }}>
-          <h4 className="fw-bold text-uppercase text-forest-dark fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
+        <div className="mb-4 fs-8 text-secondary pt-3 border-top border-custom" style={{ fontSize: '0.8rem', color: '#CBD5E1' }}>
+          <h4 className="fw-bold text-uppercase text-white fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
             What Happens Next:
           </h4>
           <div className="d-flex align-items-start gap-2 mb-2">
-            <span className="badge bg-forest text-cream rounded-circle p-1 d-flex align-items-center justify-content-center" style={{ width: '18px', height: '18px', fontSize: '0.65rem' }}>1</span>
+            <span className="badge bg-forest text-white rounded-circle p-1 d-flex align-items-center justify-content-center" style={{ width: '18px', height: '18px', fontSize: '0.65rem' }}>1</span>
             <span>Technical review of your project scope by our Mauritius solutions architects.</span>
           </div>
           <div className="d-flex align-items-start gap-2 mb-2">
-            <span className="badge bg-forest text-cream rounded-circle p-1 d-flex align-items-center justify-content-center" style={{ width: '18px', height: '18px', fontSize: '0.65rem' }}>2</span>
+            <span className="badge bg-forest text-white rounded-circle p-1 d-flex align-items-center justify-content-center" style={{ width: '18px', height: '18px', fontSize: '0.65rem' }}>2</span>
             <span>We contact you via email ({formData.email}) or phone ({formData.phone}) within 24 business hours.</span>
           </div>
           <div className="d-flex align-items-start gap-2">
-            <span className="badge bg-forest text-cream rounded-circle p-1 d-flex align-items-center justify-content-center" style={{ width: '18px', height: '18px', fontSize: '0.65rem' }}>3</span>
+            <span className="badge bg-forest text-white rounded-circle p-1 d-flex align-items-center justify-content-center" style={{ width: '18px', height: '18px', fontSize: '0.65rem' }}>3</span>
             <span>Initial discovery consultation to finalize architecture and pricing roadmap.</span>
           </div>
         </div>
@@ -289,7 +289,7 @@ Official Site: https://mindora.mu
   return (
     <form
       onSubmit={handleSubmit}
-      className="card-growvia p-4 p-md-5 shadow-card-custom"
+      className="card-growvia border-beam-card p-4 p-md-5 shadow-card-custom"
       noValidate
     >
       {/* Honeypot field for bot/spam prevention */}
@@ -317,7 +317,7 @@ Official Site: https://mindora.mu
       {/* Grid: Name & Company */}
       <div className="row g-3 mb-3">
         <div className="col-12 col-sm-6">
-          <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+          <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
             Full Name <span className="text-danger">*</span>
           </label>
           <input
@@ -332,7 +332,7 @@ Official Site: https://mindora.mu
         </div>
 
         <div className="col-12 col-sm-6">
-          <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+          <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
             Company Name <span className="text-danger">*</span>
           </label>
           <input
@@ -350,7 +350,7 @@ Official Site: https://mindora.mu
       {/* Grid: Email & Phone */}
       <div className="row g-3 mb-3">
         <div className="col-12 col-sm-6">
-          <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+          <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
             Business Email <span className="text-danger">*</span>
           </label>
           <input
@@ -365,7 +365,7 @@ Official Site: https://mindora.mu
         </div>
 
         <div className="col-12 col-sm-6">
-          <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+          <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
             Phone / WhatsApp Number
           </label>
           <input
@@ -382,7 +382,7 @@ Official Site: https://mindora.mu
       {/* Grid: Country & Service/Product */}
       <div className="row g-3 mb-3">
         <div className="col-12 col-sm-6">
-          <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+          <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
             Country / Region
           </label>
           <select
@@ -403,7 +403,7 @@ Official Site: https://mindora.mu
         </div>
 
         <div className="col-12 col-sm-6">
-          <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+          <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
             Service or Product Required <span className="text-danger">*</span>
           </label>
           <select
@@ -434,7 +434,7 @@ Official Site: https://mindora.mu
 
       {/* Budget Choices */}
       <div className="mb-3">
-        <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+        <label className="form-label text-uppercase fw-bold text-white fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
           Estimated Budget Range
         </label>
         <div className="row g-2">
@@ -450,8 +450,8 @@ Official Site: https://mindora.mu
               <label
                 className={`w-100 p-2 text-center rounded-3 border fs-8 fw-semibold cursor-pointer transition-all ${
                   formData.estimatedBudget === budget
-                    ? 'bg-forest text-cream-light border-forest shadow-sm'
-                    : 'bg-cream-main border-custom text-body-custom'
+                    ? 'bg-forest text-white border-forest shadow-sm'
+                    : 'bg-surface-solid border-custom text-secondary'
                 }`}
                 style={{ fontSize: '0.75rem', cursor: 'pointer' }}
               >
@@ -472,7 +472,7 @@ Official Site: https://mindora.mu
 
       {/* Project Description */}
       <div className="mb-3">
-        <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+        <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
           Project Description & Requirements
         </label>
         <textarea

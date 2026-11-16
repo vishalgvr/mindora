@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { ScrollToTop } from './components/ScrollToTop';
+import { AntigravityCanvas } from './components/AntigravityCanvas';
 
 // Pages
 import { Home } from './pages/Home';
@@ -19,10 +20,11 @@ import { Terms } from './pages/Terms';
 export const App: React.FC = () => {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <div className="d-flex flex-column bg-cream-main text-body-custom" style={{ minHeight: '100vh' }}>
+      <div className="d-flex flex-column text-body-custom position-relative" style={{ minHeight: '100vh', backgroundColor: '#030307' }}>
+        <AntigravityCanvas />
         <ScrollToTop />
         <Navbar />
-        <main className="flex-grow-1">
+        <main className="flex-grow-1 position-relative" style={{ zIndex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />

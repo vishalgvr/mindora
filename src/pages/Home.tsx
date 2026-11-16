@@ -44,10 +44,10 @@ export const Home: React.FC = () => {
             <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
               ABOUT MINDORA
             </span>
-            <h2 className="display-6 fw-extrabold text-forest-dark mb-3">
+            <h2 className="display-6 fw-extrabold text-gradient-luxury mb-3">
               Technology That Moves Your Business Forward.
             </h2>
-            <p className="fs-6 text-body-custom text-opacity-85 mb-0" style={{ lineHeight: '1.6' }}>
+            <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
               Mindora connects businesses with modern digital technologies, software solutions, and
               expert services. We simplify the process of finding, implementing, and managing the
               right technology for your business.
@@ -57,15 +57,15 @@ export const Home: React.FC = () => {
           {/* Three Core Principles */}
           <div className="row g-4">
             <div className="col-12 col-md-4">
-              <div className="card card-growvia h-100 p-4 p-lg-5 bg-cream-main shadow-soft-custom">
+              <div className="card card-growvia h-100 p-4 p-lg-5 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest text-cream d-flex align-items-center justify-content-center mb-4 shadow-sm"
-                  style={{ width: '48px', height: '48px' }}
+                  className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center mb-4 shadow-sm"
+                  style={{ width: '48px', height: '48px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
                 >
                   <Zap size={22} />
                 </div>
-                <h3 className="h5 fw-bold text-forest-dark mb-2">Smart Solutions</h3>
-                <p className="text-body-custom text-opacity-80 fs-7 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5' }}>
+                <h3 className="h5 fw-bold text-white mb-2">Smart Solutions</h3>
+                <p className="text-secondary fs-7 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   Applied AI automation and custom software designed around your real operational
                   challenges, eliminating bottlenecks without unnecessary bloat.
                 </p>
@@ -73,15 +73,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-4">
-              <div className="card card-growvia h-100 p-4 p-lg-5 bg-cream-main shadow-soft-custom">
+              <div className="card card-growvia h-100 p-4 p-lg-5 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest text-cream d-flex align-items-center justify-content-center mb-4 shadow-sm"
-                  style={{ width: '48px', height: '48px' }}
+                  className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center mb-4 shadow-sm"
+                  style={{ width: '48px', height: '48px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
                 >
                   <ShieldCheck size={22} />
                 </div>
-                <h3 className="h5 fw-bold text-forest-dark mb-2">Reliable Technology</h3>
-                <p className="text-body-custom text-opacity-80 fs-7 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5' }}>
+                <h3 className="h5 fw-bold text-white mb-2">Reliable Technology</h3>
+                <p className="text-secondary fs-7 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   Enterprise-grade security, tested software architectures, and verified software
                   products backed by transparent service level guarantees.
                 </p>
@@ -89,15 +89,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-4">
-              <div className="card card-growvia h-100 p-4 p-lg-5 bg-cream-main shadow-soft-custom">
+              <div className="card card-growvia h-100 p-4 p-lg-5 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest text-cream d-flex align-items-center justify-content-center mb-4 shadow-sm"
-                  style={{ width: '48px', height: '48px' }}
+                  className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center mb-4 shadow-sm"
+                  style={{ width: '48px', height: '48px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
                 >
                   <Target size={22} />
                 </div>
-                <h3 className="h5 fw-bold text-forest-dark mb-2">Sustainable Business Growth</h3>
-                <p className="text-body-custom text-opacity-80 fs-7 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5' }}>
+                <h3 className="h5 fw-bold text-white mb-2">Sustainable Business Growth</h3>
+                <p className="text-secondary fs-7 mb-0" style={{ fontSize: '0.875rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   Scalable digital assets that grow with your company, empowering leadership to
                   expand confidently across local and international markets.
                 </p>
@@ -108,18 +108,18 @@ export const Home: React.FC = () => {
       </section>
 
       {/* SECTION 3: MAIN SERVICES */}
-      <section className="py-5 bg-cream-main">
+      <section className="py-5">
         <div className="container py-lg-4">
           <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 gap-3">
             <div>
-              <span className="text-uppercase text-forest fw-bold fs-8 d-block mb-1" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+              <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-1" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
                 COMPREHENSIVE CAPABILITIES
               </span>
-              <h2 className="display-6 fw-extrabold text-forest-dark mb-0">
+              <h2 className="display-6 fw-extrabold text-white mb-0">
                 Explore Our Digital Services
               </h2>
             </div>
-            <p className="text-body-custom text-opacity-80 mb-0" style={{ maxWidth: '420px', fontSize: '0.875rem' }}>
+            <p className="text-secondary mb-0" style={{ maxWidth: '420px', fontSize: '0.875rem', color: '#94A3B8' }}>
               From intelligent automation to custom software development, discover solutions
               designed around your business goals.
             </p>
@@ -153,10 +153,10 @@ export const Home: React.FC = () => {
             <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
               ENTERPRISE & ACCELERATOR PLATFORMS
             </span>
-            <h2 className="display-6 fw-extrabold text-forest-dark mb-3">
+            <h2 className="display-6 fw-extrabold text-gradient-luxury mb-3">
               Powerful Digital Products for Modern Businesses
             </h2>
-            <p className="fs-6 text-body-custom text-opacity-85 mb-0" style={{ lineHeight: '1.6' }}>
+            <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
               Discover ready-made, battle-tested software suites available through Mindora's
               authorized reseller and technology partner arrangements with Klyssel Labs.
             </p>
@@ -174,16 +174,16 @@ export const Home: React.FC = () => {
       </section>
 
       {/* SECTION 5: WHY CHOOSE MINDORA? */}
-      <section className="py-5 bg-cream-main">
+      <section className="py-5">
         <div className="container py-lg-4">
           <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
-            <span className="text-uppercase text-forest fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
               THE MINDORA ADVANTAGE
             </span>
-            <h2 className="display-6 fw-extrabold text-forest-dark mb-3">
+            <h2 className="display-6 fw-extrabold text-white mb-3">
               Your Partner in Digital Transformation
             </h2>
-            <p className="fs-6 text-body-custom text-opacity-85 mb-0" style={{ lineHeight: '1.6' }}>
+            <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
               We focus on understanding your business challenges and connecting you with the right
               digital solutions to achieve practical results.
             </p>
@@ -192,15 +192,15 @@ export const Home: React.FC = () => {
           {/* 6 Feature Cards */}
           <div className="row g-4">
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px' }}
+                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                 >
                   <Sliders size={22} />
                 </div>
-                <h3 className="h6 fw-bold text-forest-dark mb-2">Tailored Technology Solutions</h3>
-                <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                <h3 className="h6 fw-bold text-white mb-2">Tailored Technology Solutions</h3>
+                <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   No rigid cookie-cutter templates. Every system is scoped and calibrated to solve
                   your explicit commercial bottlenecks.
                 </p>
@@ -208,15 +208,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px' }}
+                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                 >
                   <Sparkles size={22} />
                 </div>
-                <h3 className="h6 fw-bold text-forest-dark mb-2">Access to Advanced Digital Products</h3>
-                <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                <h3 className="h6 fw-bold text-white mb-2">Access to Advanced Digital Products</h3>
+                <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   Immediate access to flagship platforms including Klyssel One ERP/CRM and Klyx
                   Chatbot AI with authorized deployment support.
                 </p>
@@ -224,15 +224,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px' }}
+                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                 >
                   <Users size={22} />
                 </div>
-                <h3 className="h6 fw-bold text-forest-dark mb-2">Professional Technical Expertise</h3>
-                <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                <h3 className="h6 fw-bold text-white mb-2">Professional Technical Expertise</h3>
+                <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   Seasoned solution architects and developers adhering to rigorous software
                   engineering, security, and data protection standards.
                 </p>
@@ -240,15 +240,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px' }}
+                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                 >
                   <Target size={22} />
                 </div>
-                <h3 className="h6 fw-bold text-forest-dark mb-2">Business-Focused Approach</h3>
-                <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                <h3 className="h6 fw-bold text-white mb-2">Business-Focused Approach</h3>
+                <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   We speak the language of commercial return, operational efficiency, and customer
                   retention rather than superficial technology jargon.
                 </p>
@@ -256,15 +256,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px' }}
+                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                 >
                   <Compass size={22} />
                 </div>
-                <h3 className="h6 fw-bold text-forest-dark mb-2">Flexible Engagement Models</h3>
-                <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                <h3 className="h6 fw-bold text-white mb-2">Flexible Engagement Models</h3>
+                <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   From turnkey software product rollout to dedicated engineering squads and advisory
                   retainers tailored to your stage of maturity.
                 </p>
@@ -272,15 +272,15 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-6 col-lg-4">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom">
                 <div
-                  className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                  style={{ width: '45px', height: '45px' }}
+                  className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                  style={{ width: '45px', height: '45px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                 >
                   <Headphones size={22} />
                 </div>
-                <h3 className="h6 fw-bold text-forest-dark mb-2">Ongoing Client Support</h3>
-                <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                <h3 className="h6 fw-bold text-white mb-2">Ongoing Client Support</h3>
+                <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                   Dedicated regional contact and continuous maintenance ensure your systems remain
                   fast, secure, and aligned with market changes.
                 </p>
@@ -298,11 +298,11 @@ export const Home: React.FC = () => {
               <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-1" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
                 VERTICAL SPECIALIZATION
               </span>
-              <h2 className="display-6 fw-extrabold text-forest-dark mb-0">
+              <h2 className="display-6 fw-extrabold text-white mb-0">
                 Industries We Serve
               </h2>
             </div>
-            <p className="text-body-custom text-opacity-80 mb-0" style={{ maxWidth: '420px', fontSize: '0.875rem' }}>
+            <p className="text-secondary mb-0" style={{ maxWidth: '420px', fontSize: '0.875rem', color: '#94A3B8' }}>
               Tailored digital solutions engineered for the specific commercial realities of
               Mauritius, the Indian Ocean, and international markets.
             </p>
@@ -319,16 +319,16 @@ export const Home: React.FC = () => {
       </section>
 
       {/* SECTION 7: HOW WE WORK */}
-      <section className="py-5 bg-cream-main">
+      <section className="py-5">
         <div className="container py-lg-4">
           <div className="text-center mx-auto mb-5" style={{ maxWidth: '720px' }}>
-            <span className="text-uppercase text-forest fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+            <span className="text-uppercase text-sage fw-bold fs-8 d-block mb-2" style={{ fontSize: '0.75rem', letterSpacing: '0.08em' }}>
               STRUCTURED ENGAGEMENT
             </span>
-            <h2 className="display-6 fw-extrabold text-forest-dark mb-3">
+            <h2 className="display-6 fw-extrabold text-gradient-luxury mb-3">
               From Business Challenges to Digital Solutions
             </h2>
-            <p className="fs-6 text-body-custom text-opacity-85 mb-0" style={{ lineHeight: '1.6' }}>
+            <p className="fs-6 text-secondary mb-0" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
               Our transparent four-phase delivery methodology keeps your leadership in complete
               control from initial requirements through ongoing operations.
             </p>
@@ -337,17 +337,17 @@ export const Home: React.FC = () => {
           {/* 4-Step Grid */}
           <div className="row g-4">
             <div className="col-12 col-md-6 col-lg-3">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom d-flex flex-column justify-content-between">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom d-flex flex-column justify-content-between">
                 <div>
-                  <span className="font-monospace fw-extrabold text-forest text-opacity-25 fs-3 d-block mb-2">01</span>
+                  <span className="font-monospace fw-extrabold text-gradient-accent fs-3 d-block mb-2">01</span>
                   <div
-                    className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                    style={{ width: '40px', height: '40px' }}
+                    className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                    style={{ width: '40px', height: '40px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                   >
                     <Search size={20} />
                   </div>
-                  <h3 className="h6 fw-bold text-forest-dark mb-2">Discover</h3>
-                  <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                  <h3 className="h6 fw-bold text-white mb-2">Discover</h3>
+                  <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                     Understand your business needs, goals, and challenges through an in-depth
                     technical and operational consultation.
                   </p>
@@ -359,17 +359,17 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-6 col-lg-3">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom d-flex flex-column justify-content-between">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom d-flex flex-column justify-content-between">
                 <div>
-                  <span className="font-monospace fw-extrabold text-forest text-opacity-25 fs-3 d-block mb-2">02</span>
+                  <span className="font-monospace fw-extrabold text-gradient-accent fs-3 d-block mb-2">02</span>
                   <div
-                    className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                    style={{ width: '40px', height: '40px' }}
+                    className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                    style={{ width: '40px', height: '40px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                   >
                     <Workflow size={20} />
                   </div>
-                  <h3 className="h6 fw-bold text-forest-dark mb-2">Recommend</h3>
-                  <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                  <h3 className="h6 fw-bold text-white mb-2">Recommend</h3>
+                  <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                     Identify the most suitable digital services or products—comparing custom builds
                     against proven ecosystem platforms like Klyssel One.
                   </p>
@@ -381,17 +381,17 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-6 col-lg-3">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom d-flex flex-column justify-content-between">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom d-flex flex-column justify-content-between">
                 <div>
-                  <span className="font-monospace fw-extrabold text-forest text-opacity-25 fs-3 d-block mb-2">03</span>
+                  <span className="font-monospace fw-extrabold text-gradient-accent fs-3 d-block mb-2">03</span>
                   <div
-                    className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                    style={{ width: '40px', height: '40px' }}
+                    className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                    style={{ width: '40px', height: '40px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                   >
                     <Sliders size={20} />
                   </div>
-                  <h3 className="h6 fw-bold text-forest-dark mb-2">Implement</h3>
-                  <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                  <h3 className="h6 fw-bold text-white mb-2">Implement</h3>
+                  <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                     Coordinate the solution, setup, customization, and deployment with the relevant
                     technology team and authorized specialists.
                   </p>
@@ -403,17 +403,17 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="col-12 col-md-6 col-lg-3">
-              <div className="card card-growvia h-100 p-4 shadow-soft-custom d-flex flex-column justify-content-between">
+              <div className="card card-growvia h-100 p-4 shadow-card-custom d-flex flex-column justify-content-between">
                 <div>
-                  <span className="font-monospace fw-extrabold text-forest text-opacity-25 fs-3 d-block mb-2">04</span>
+                  <span className="font-monospace fw-extrabold text-gradient-accent fs-3 d-block mb-2">04</span>
                   <div
-                    className="rounded-3 bg-forest-subtle text-forest d-flex align-items-center justify-content-center mb-3"
-                    style={{ width: '40px', height: '40px' }}
+                    className="rounded-3 bg-forest-subtle text-sage d-flex align-items-center justify-content-center mb-3"
+                    style={{ width: '40px', height: '40px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                   >
                     <LifeBuoy size={20} />
                   </div>
-                  <h3 className="h6 fw-bold text-forest-dark mb-2">Support</h3>
-                  <p className="text-body-custom text-opacity-80 fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                  <h3 className="h6 fw-bold text-white mb-2">Support</h3>
+                  <p className="text-secondary fs-8 mb-0" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#94A3B8' }}>
                     Provide client communication, assistance, and ongoing coordination according to the
                     agreed service scope and SLA commitments.
                   </p>

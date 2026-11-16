@@ -67,7 +67,7 @@ export const Products: React.FC = () => {
   };
 
   return (
-    <div className="w-100 bg-cream-main">
+    <div className="w-100">
       <SEO
         title="Digital Products | Klyssel One & Klyx Chatbot AI — Mindora Mauritius"
         description="Explore enterprise software products available through Mindora: Klyssel One ERP/CRM, Klyssel One Lite, and Klyx Chatbot v2.4 AI with authorized deployment support."
@@ -75,25 +75,25 @@ export const Products: React.FC = () => {
       />
 
       {/* Header Banner */}
-      <section className="py-5 bg-surface border-bottom border-custom text-center">
+      <section className="py-5 bg-surface border-bottom border-custom text-center position-relative">
         <div className="container py-lg-4" style={{ maxWidth: '780px' }}>
           <div className="badge-growvia mb-3">
-            <Sparkles size={13} className="text-forest" />
+            <Sparkles size={13} className="text-sage" />
             <span>PRODUCT ECOSYSTEM & RESELLER CATALOGUE</span>
           </div>
 
-          <h1 className="display-6 fw-extrabold text-forest-dark mb-3">
+          <h1 className="display-6 fw-extrabold text-gradient-luxury mb-3">
             Explore Digital Products for Business Growth.
           </h1>
 
-          <p className="fs-6 text-body-custom text-opacity-85 mb-4" style={{ lineHeight: '1.6' }}>
+          <p className="fs-6 text-secondary mb-4" style={{ lineHeight: '1.6', color: '#94A3B8' }}>
             Discover ready-made digital solutions designed to simplify business operations, improve
             customer interactions, and support digital transformation.
           </p>
 
-          <div className="p-3 rounded-4-custom bg-cream-main border border-custom fs-8 text-body-custom text-opacity-80 mx-auto" style={{ maxWidth: '640px', fontSize: '0.78rem', lineHeight: '1.5' }}>
-            <div className="d-flex align-items-center justify-content-center gap-1.5 fw-bold text-forest-dark mb-1">
-              <ShieldCheck size={14} className="text-forest" />
+          <div className="p-3 rounded-4-custom bg-surface-solid border border-custom fs-8 text-secondary mx-auto" style={{ maxWidth: '640px', fontSize: '0.78rem', lineHeight: '1.5', color: '#CBD5E1' }}>
+            <div className="d-flex align-items-center justify-content-center gap-1.5 fw-bold text-white mb-1">
+              <ShieldCheck size={14} className="text-sage" />
               <span>Technology Partner & Distribution Notice</span>
             </div>
             All featured software products are the proprietary intellectual property of Klyssel Labs
@@ -102,7 +102,7 @@ export const Products: React.FC = () => {
               href="https://klyssel.com/products"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-forest text-decoration-underline fw-bold"
+              className="text-sage text-decoration-underline fw-bold"
             >
               klyssel.com/products
             </a>
@@ -119,15 +119,15 @@ export const Products: React.FC = () => {
               <div
                 key={product.id}
                 id={product.id}
-                className="card-growvia p-4 p-md-5 shadow-card-custom"
+                className="card-growvia border-beam-card p-4 p-md-5 shadow-card-custom"
                 style={{ scrollMarginTop: '100px' }}
               >
                 {/* Product Header */}
                 <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center pb-4 mb-4 border-bottom border-custom gap-3">
                   <div className="d-flex align-items-start gap-3">
                     <div
-                      className="rounded-3 bg-forest text-cream d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm"
-                      style={{ width: '56px', height: '56px' }}
+                      className="rounded-3 bg-forest text-white d-flex align-items-center justify-content-center flex-shrink-0 shadow-sm"
+                      style={{ width: '56px', height: '56px', border: '1px solid rgba(255, 255, 255, 0.2)' }}
                     >
                       {product.id === 'klyx-chatbot' ? (
                         <Sparkles size={28} />
@@ -139,17 +139,18 @@ export const Products: React.FC = () => {
                     </div>
                     <div>
                       <div className="d-flex align-items-center gap-2 mb-1">
-                        <span className="text-uppercase fw-bold text-forest fs-8" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
+                        <span className="text-uppercase fw-bold text-sage fs-8" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
                           {product.category}
                         </span>
-                        <span className="badge bg-forest text-cream rounded-pill fs-8" style={{ fontSize: '0.65rem' }}>
+                        <span className="badge-sage d-inline-flex align-items-center gap-1.5 py-0.5 px-2.5 rounded-pill" style={{ fontSize: '0.65rem' }}>
+                          <span className="beacon-dot" style={{ width: '5px', height: '5px' }} />
                           {product.statusBadge}
                         </span>
                       </div>
-                      <h2 className="h3 fw-extrabold text-forest-dark mb-1">
+                      <h2 className="h3 fw-extrabold text-white mb-1">
                         {product.name}
                       </h2>
-                      <p className="text-forest fs-8 fw-semibold mb-0" style={{ fontSize: '0.78rem' }}>{product.tagline}</p>
+                      <p className="text-sage fs-8 fw-semibold mb-0" style={{ fontSize: '0.78rem' }}>{product.tagline}</p>
                     </div>
                   </div>
 
@@ -190,21 +191,21 @@ export const Products: React.FC = () => {
                       <h3 className="text-uppercase fw-bold text-sage fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
                         Platform Overview
                       </h3>
-                      <p className="fs-7 text-body-custom text-opacity-90 mb-0" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+                      <p className="fs-7 text-secondary mb-0" style={{ fontSize: '0.9rem', lineHeight: '1.6', color: '#CBD5E1' }}>
                         {product.overview}
                       </p>
                     </div>
 
                     <div className="mb-4">
-                      <h3 className="text-uppercase fw-bold text-forest-dark fs-8 mb-3" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
+                      <h3 className="text-uppercase fw-bold text-white fs-8 mb-3" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
                         Verified Technical Capabilities:
                       </h3>
                       <ul className="list-unstyled d-flex flex-column gap-2 mb-0">
                         {product.verifiedFeatures.map((feat, idx) => (
-                          <li key={idx} className="d-flex align-items-start gap-2 fs-8 text-body-custom" style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>
+                          <li key={idx} className="d-flex align-items-start gap-2 fs-8" style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#CBD5E1' }}>
                             <span
-                              className="rounded-circle bg-botanical-subtle text-forest d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5"
-                              style={{ width: '16px', height: '16px' }}
+                              className="rounded-circle bg-forest-subtle text-sage d-flex align-items-center justify-content-center flex-shrink-0 mt-0.5"
+                              style={{ width: '16px', height: '16px', border: '1px solid rgba(56, 189, 248, 0.3)' }}
                             >
                               <Check size={11} className="stroke-[3]" />
                             </span>
@@ -215,16 +216,16 @@ export const Products: React.FC = () => {
                     </div>
 
                     {product.requiresVerification && (
-                      <div className="p-3 rounded-3 bg-warning bg-opacity-10 border border-warning border-opacity-25 fs-8 text-dark d-flex align-items-start gap-2" style={{ fontSize: '0.75rem', lineHeight: '1.4' }}>
-                        <FileCheck size={16} className="text-warning flex-shrink-0 mt-0.5" />
+                      <div className="p-3 rounded-3 bg-surface-solid border border-custom fs-8 text-secondary d-flex align-items-start gap-2" style={{ fontSize: '0.75rem', lineHeight: '1.4', color: '#CBD5E1' }}>
+                        <FileCheck size={16} className="text-sage flex-shrink-0 mt-0.5" />
                         <div>
-                          <strong>Verified Documentation Status: </strong>
+                          <strong className="text-white">Verified Documentation Status: </strong>
                           {product.placeholderNotice} Official source:{' '}
                           <a
                             href={product.officialSource}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-dark fw-bold text-decoration-underline"
+                            className="text-sage fw-bold text-decoration-underline"
                           >
                             {product.officialSource}
                           </a>
@@ -237,15 +238,15 @@ export const Products: React.FC = () => {
                   <div className="col-12 col-lg-5">
                     <div className="d-flex flex-column gap-3">
                       {/* Suitable Business Types */}
-                      <div className="p-3 rounded-4-custom bg-cream-main border border-custom">
-                        <h4 className="text-uppercase fw-bold text-forest-dark fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+                      <div className="p-3 rounded-4-custom bg-surface-solid border border-custom">
+                        <h4 className="text-uppercase fw-bold text-white fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
                           Ideal For These Organizations:
                         </h4>
                         <div className="d-flex flex-wrap gap-1.5">
                           {product.suitableBusinessTypes.map((type, idx) => (
                             <span
                               key={idx}
-                              className="px-2.5 py-1 rounded-3 bg-surface fs-8 text-forest-dark border border-custom fw-semibold"
+                              className="px-2.5 py-1 rounded-3 bg-surface fs-8 text-white border border-custom fw-semibold"
                               style={{ fontSize: '0.75rem' }}
                             >
                               {type}
@@ -255,14 +256,14 @@ export const Products: React.FC = () => {
                       </div>
 
                       {/* Business Benefits */}
-                      <div className="p-3 rounded-4-custom bg-cream-main border border-custom">
-                        <h4 className="text-uppercase fw-bold text-forest-dark fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+                      <div className="p-3 rounded-4-custom bg-surface-solid border border-custom">
+                        <h4 className="text-uppercase fw-bold text-white fs-8 mb-2" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
                           Measurable Business Benefits:
                         </h4>
                         <ul className="list-unstyled d-flex flex-column gap-1.5 fs-8 mb-0" style={{ fontSize: '0.78rem' }}>
                           {product.businessBenefits.map((ben, idx) => (
-                            <li key={idx} className="d-flex align-items-start gap-1.5 text-body-custom">
-                              <span className="text-forest fw-bold">•</span>
+                            <li key={idx} className="d-flex align-items-start gap-1.5 text-secondary" style={{ color: '#CBD5E1' }}>
+                              <span className="text-sage fw-bold">•</span>
                               <span>{ben}</span>
                             </li>
                           ))}
@@ -270,8 +271,8 @@ export const Products: React.FC = () => {
                       </div>
 
                       {/* Deployment */}
-                      <div className="p-3 rounded-4-custom bg-cream-main border border-custom">
-                        <h4 className="text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
+                      <div className="p-3 rounded-4-custom bg-surface-solid border border-custom">
+                        <h4 className="text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.72rem', letterSpacing: '0.04em' }}>
                           Deployment & Hosting:
                         </h4>
                         <p className="mb-0 text-muted-custom fs-8" style={{ fontSize: '0.75rem' }}>
@@ -285,16 +286,16 @@ export const Products: React.FC = () => {
                 {/* Footer Strip */}
                 <div className="pt-3 border-top border-custom d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 fs-8" style={{ fontSize: '0.78rem' }}>
                   <div className="d-flex align-items-center gap-2 text-muted-custom">
-                    <ShieldCheck size={14} className="text-forest flex-shrink-0" />
+                    <ShieldCheck size={14} className="text-sage flex-shrink-0" />
                     <span>
-                      <strong>Ownership & Distribution: </strong>
+                      <strong className="text-white">Ownership & Distribution: </strong>
                       {product.ownership} {product.resellerRole}
                     </span>
                   </div>
 
                   <button
                     onClick={() => openModal(product, 'demo')}
-                    className="btn btn-link text-forest fw-bold text-decoration-none p-0 d-inline-flex align-items-center gap-1 fs-8"
+                    className="btn btn-link text-sage fw-bold text-decoration-none p-0 d-inline-flex align-items-center gap-1 fs-8"
                     style={{ fontSize: '0.78rem' }}
                   >
                     Schedule Technical Walkthrough <ArrowRight size={12} />
@@ -306,21 +307,21 @@ export const Products: React.FC = () => {
         </div>
       </section>
 
-      {/* BOOTSTRAP DEMO / PRICING MODAL */}
+      {/* BOOTSTRAP DEMO / PRICING MODAL WITH LUXURY GLASS */}
       {activeModalProduct && (
         <div
           className="modal show d-block"
           tabIndex={-1}
-          style={{ backgroundColor: 'rgba(23, 59, 44, 0.75)', zIndex: 1070 }}
+          style={{ backgroundColor: 'rgba(3, 3, 8, 0.82)', backdropFilter: 'blur(20px)', zIndex: 1070 }}
         >
           <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: '480px' }}>
-            <div className="modal-content card-growvia p-4 border-0 shadow-hover-custom">
+            <div className="modal-content card-growvia border-beam-card p-4 border-0 shadow-hover-custom" style={{ backgroundColor: 'rgba(13, 12, 26, 0.95)' }}>
               <div className="d-flex justify-content-between align-items-start mb-3">
                 <div>
                   <span className="text-uppercase fw-bold text-sage fs-8 d-block" style={{ fontSize: '0.68rem', letterSpacing: '0.05em' }}>
                     {modalMode === 'demo' ? 'Product Demo Scheduling' : 'Quotation Enquiry'}
                   </span>
-                  <h3 className="h5 fw-bold text-forest-dark mb-0">{activeModalProduct.name}</h3>
+                  <h3 className="h5 fw-bold text-white mb-0">{activeModalProduct.name}</h3>
                 </div>
                 <button
                   type="button"
@@ -334,11 +335,11 @@ export const Products: React.FC = () => {
 
               {modalSuccessMessage ? (
                 <div className="text-center py-4">
-                  <div className="rounded-circle bg-success-subtle text-forest d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: '48px', height: '48px' }}>
+                  <div className="rounded-circle bg-forest text-white d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: '48px', height: '48px' }}>
                     <Check size={24} />
                   </div>
-                  <h4 className="h6 fw-bold text-forest-dark mb-2">Request Registered</h4>
-                  <p className="fs-8 text-muted-custom mb-4" style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+                  <h4 className="h6 fw-bold text-white mb-2">Request Registered</h4>
+                  <p className="fs-8 text-secondary mb-4" style={{ fontSize: '0.8rem', lineHeight: '1.5', color: '#CBD5E1' }}>
                     {modalSuccessMessage}
                   </p>
                   <button
@@ -351,7 +352,7 @@ export const Products: React.FC = () => {
               ) : (
                 <form onSubmit={handleModalSubmit} className="d-flex flex-column gap-3">
                   <div>
-                    <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
+                    <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
                       Contact Person *
                     </label>
                     <input
@@ -365,7 +366,7 @@ export const Products: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
+                    <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
                       Company Name *
                     </label>
                     <input
@@ -380,7 +381,7 @@ export const Products: React.FC = () => {
 
                   <div className="row g-2">
                     <div className="col-6">
-                      <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
+                      <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
                         Work Email *
                       </label>
                       <input
@@ -393,7 +394,7 @@ export const Products: React.FC = () => {
                       />
                     </div>
                     <div className="col-6">
-                      <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
+                      <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
                         Phone *
                       </label>
                       <input
@@ -408,7 +409,7 @@ export const Products: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
+                    <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
                       Organization Size
                     </label>
                     <select
@@ -424,7 +425,7 @@ export const Products: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="form-label text-uppercase fw-bold text-forest-dark fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
+                    <label className="form-label text-uppercase fw-bold text-white fs-8 mb-1" style={{ fontSize: '0.7rem' }}>
                       Specific Requirements
                     </label>
                     <textarea

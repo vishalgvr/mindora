@@ -16,24 +16,36 @@ export const CTASection: React.FC<CTASectionProps> = ({
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappPrefillMessage)}`;
 
   return (
-    <section className="py-5 bg-forest-dark text-cream-light position-relative overflow-hidden">
+    <section className="py-5 position-relative overflow-hidden" style={{ backgroundColor: 'rgba(5, 4, 12, 0.85)' }}>
+      {/* Ambient Aurora Orbs */}
+      <div
+        className="position-absolute rounded-circle"
+        style={{
+          width: '500px',
+          height: '500px',
+          top: '-150px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'radial-gradient(circle, rgba(133, 55, 252, 0.2) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 70%)',
+          filter: 'blur(80px)',
+          pointerEvents: 'none',
+        }}
+      />
+
       <div className="container py-lg-5 text-center position-relative" style={{ maxWidth: '850px', zIndex: 1 }}>
-        {/* Tag Pill */}
-        <div
-          className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-forest border border-sage-custom text-sage fs-8 mb-3"
-          style={{ fontSize: '0.75rem', letterSpacing: '0.06em' }}
-        >
-          <Sparkles size={13} className="text-cream" />
+        {/* Tag Pill with Pulse Beacon */}
+        <div className="badge-growvia mb-3 shadow-sm">
+          <span className="beacon-dot" />
           <span>START YOUR DIGITAL JOURNEY</span>
         </div>
 
         {/* Headline */}
-        <h2 className="display-5 fw-extrabold text-cream-light mb-3">
+        <h2 className="display-5 fw-extrabold text-gradient-luxury mb-3">
           {headline}
         </h2>
 
         {/* Description */}
-        <p className="fs-5 text-light text-opacity-85 mb-4 mx-auto" style={{ maxWidth: '650px', fontWeight: 300, lineHeight: '1.6' }}>
+        <p className="fs-5 text-secondary mb-4 mx-auto" style={{ maxWidth: '650px', fontWeight: 300, lineHeight: '1.6', color: '#CBD5E1' }}>
           {description}
         </p>
 
@@ -41,7 +53,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
         <div className="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 mb-5">
           <Link
             to="/contact"
-            className="btn btn-cream d-inline-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto shadow-hover-custom"
+            className="btn btn-forest d-inline-flex align-items-center justify-content-center gap-2 w-100 w-sm-auto shadow-hover-custom"
           >
             <span>Request a Consultation</span>
             <ArrowRight size={15} />
@@ -49,7 +61,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
           <Link
             to="/contact"
-            className="btn btn-outline-light d-inline-flex align-items-center justify-content-center rounded-pill py-2 px-4 text-uppercase fw-bold fs-8 w-100 w-sm-auto"
+            className="btn btn-cream d-inline-flex align-items-center justify-content-center rounded-pill py-2 px-4 text-uppercase fw-bold fs-8 w-100 w-sm-auto"
             style={{ fontSize: '0.8rem', letterSpacing: '0.05em' }}
           >
             Contact Mindora
@@ -59,8 +71,8 @@ export const CTASection: React.FC<CTASectionProps> = ({
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-success d-inline-flex align-items-center justify-content-center rounded-pill py-2 px-4 text-uppercase fw-bold fs-8 w-100 w-sm-auto shadow-sm"
-            style={{ fontSize: '0.8rem', letterSpacing: '0.05em' }}
+            className="btn btn-outline-light d-inline-flex align-items-center justify-content-center rounded-pill py-2 px-4 text-uppercase fw-bold fs-8 w-100 w-sm-auto shadow-sm"
+            style={{ fontSize: '0.8rem', letterSpacing: '0.05em', borderColor: 'rgba(37, 211, 102, 0.5)', color: '#25D366' }}
           >
             <MessageSquare size={15} className="me-1.5" />
             WhatsApp Desk
@@ -68,7 +80,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
         </div>
 
         {/* Reassurance points */}
-        <div className="pt-4 border-top border-secondary border-opacity-25 d-flex flex-wrap justify-content-center gap-4 text-light text-opacity-70 fs-8" style={{ fontSize: '0.78rem' }}>
+        <div className="pt-4 border-top border-custom d-flex flex-wrap justify-content-center gap-4 text-secondary fs-8" style={{ fontSize: '0.78rem', color: '#94A3B8' }}>
           <span className="d-flex align-items-center gap-1.5">
             <ShieldCheck size={14} className="text-sage" />
             No obligation initial consultation

@@ -48,7 +48,7 @@ export const Navbar: React.FC = () => {
     <header className={`navbar navbar-expand-lg sticky-top navbar-growvia ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         {/* Brand Logo */}
-        <Logo variant="full" theme="dark" iconSize={36} />
+        <Logo variant="full" theme="light" iconSize={36} />
 
         {/* Mobile Toggle Button */}
         <div className="d-flex align-items-center gap-2 d-lg-none">
@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="btn btn-link text-forest-dark p-1"
+            className="btn btn-link text-light p-1"
             type="button"
             aria-label="Toggle navigation"
           >
